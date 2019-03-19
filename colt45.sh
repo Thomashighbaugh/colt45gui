@@ -1,6 +1,10 @@
-#!/bin/bash
-
-# Author: Thomas Leon Highbaugh
+echo "########################################################################"
+echo "Author: Thomas Leon Highbaugh aka TLH"
+echo "colt45 Auto Installer for"
+echo "Ubuntu Based Systems"
+echo "########################################################################"
+echo "This software is Free to Use With Attribution in any context. It comes with no guarentee of anything except that if you are reading this you are a complete nerd or paranoid (or mnaybe both)"
+echo "########################################################################"
 # INITIALIZATION ##############################################################
 set -o xtrace
 
@@ -171,6 +175,12 @@ taskSelectedList+=("FALSE")
 installVirtualBox()
 {
   addPackage "virtualbox"
+addPackage "virtualbox-qt" 
+addPackage "virtualbox-ext-pack" 
+addPackage "virtualbox-dkms" 
+addPackage "virtualbox-guest-utils"  
+addPackage "virtualbox-guest-x11" 
+addPackage "virtualbox-guest-source"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Skype")
