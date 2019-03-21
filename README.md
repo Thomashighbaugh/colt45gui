@@ -1,9 +1,9 @@
 #colt45 v3: GUI colt45
 >>> Replacing Previous Incarnations of the colt45 Provisioning System is this single script solution. Its a long script, to be sure, but that nonetheless increases the simplicity of the script (which considering what a pain in the you know what multiple cross file references can be). 
 
-This project was forked originally from the shell script of the Alfred Installer (which is in Python now and the script is deprecated) While modernizing the defunk script I added a **lot** of extra programs and modified some of the design logical and commentary systems apply. 
+This project was forked originally from the shell script of the _Alfred Installer_ (which is in Python now and the script is deprecated) While modernizing the deprecated shell script I changed/added extensively to the applications available and modified some of the design logical and commentary systems apply. I also included snap and flatpak into the installer to maximize the programs offered. 
 
-## Requirements 
+## REQUIREMENTS
 
 - Ubuntu Based Distro Installed on Your System 
 - Some Idea of What You Want to Use Your System For 
