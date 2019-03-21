@@ -10,7 +10,7 @@ This project was forked originally from the shell script of the _Alfred Installe
 
 ## USE 
 
-To run the GUI simply download the repository then navigate to the directory 
+To run the GUI simply download the script (colt45gui.sh) then navigate to the directory 
 `cd ~/Downloads/colt45gui`
 
 Then make it executiable 
