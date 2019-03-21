@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "########################################################################"
 echo "Author: Thomas Leon Highbaugh aka TLH"
 echo "colt45 Auto Installer for"
@@ -45,6 +46,9 @@ taskSelectedList+=("FALSE")
 autoInstallDrivers()
 {
   ubuntu-drivers autoinstall
+  addPackage "gnome-packagekit"
+  addPackage "gnome-packagekit-data"
+  addPackage "gstreamer1.0-packagekit"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Java, Flash and codecs")
@@ -102,6 +106,21 @@ installFirefox()
   addPackage "firefox firefox-locale-$(locale | grep LANGUAGE | cut -d= -f2 | cut -d_ -f1)"
 }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+taskNames+=("Install Cubic")
+taskMessages+=("Processing Cubic")
+taskDescriptions+=("Create Custom Live USBs")
+taskRecipes+=("installCubic")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installCubic()
+{
+  addRepo "ppa:cubic-wizard/release"
+  addPackage "cubic"
+}
+#------------------------------------------------------------------------------
+
 taskNames+=("Install Opera")
 taskMessages+=("Processing Opera")
 taskDescriptions+=("Just another web browser")
@@ -426,91 +445,7 @@ installLeoCad()
 
   addPackage "leocad"
 }
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice suite")
-taskMessages+=("Processing LibreOffice")
-taskDescriptions+=("A complete office suite: word processor, spreadsheets, slideshows, diagrams, drawings, databases and equations")
-taskRecipes+=("installLibreOffice")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
 
-installLibreOffice()
-{
-  addPackage "libreoffice libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Writer")
-taskMessages+=("Processing LibreOffice Writer")
-taskDescriptions+=("Install just the LibreOffice word processor")
-taskRecipes+=("installLibreOfficeWriter")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeWriter()
-{
-  addPackage "libreoffice-writer libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Impress")
-taskMessages+=("Processing LibreOffice Impress")
-taskDescriptions+=("Install just the LibreOffice slide show editor")
-taskRecipes+=("installLibreOfficeImpress")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeImpress()
-{
-  addPackage "libreoffice-impress libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Spreadsheet")
-taskMessages+=("Processing LibreOffice Spreadsheet")
-taskDescriptions+=("Install just the LibreOffice spreadsheet editor")
-taskRecipes+=("installLibreOfficeSpreadsheet")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeSpreadsheet()
-{
-  addPackage "libreoffice-calc libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Draw")
-taskMessages+=("Processing LibreOffice Draw")
-taskDescriptions+=("Install just the LibreOffice drawing editor")
-taskRecipes+=("installLibreOfficeDraw")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeDraw()
-{
-  addPackage "libreoffice-draw libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Base")
-taskMessages+=("Processing LibreOffice Base")
-taskDescriptions+=("Install just the LibreOffice database manager")
-taskRecipes+=("installLibreOfficeBase")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeBase()
-{
-  addPackage "libreoffice-base libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install LibreOffice Math")
-taskMessages+=("Processing LibreOffice Math")
-taskDescriptions+=("Install just the LibreOffice equation editor")
-taskRecipes+=("installLibreOfficeMath")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installLibreOfficeMath()
-{
-  addPackage "libreoffice-math libreoffice-l10n-$lang"
-}
-#------------------------------------------------------------------------------
 taskNames+=("Install Evince")
 taskMessages+=("Processing Evince")
 taskDescriptions+=("A document viewer with support for PDF, Postscript, djvu, tiff, dvi, XPS and SyncTex")
@@ -584,7 +519,7 @@ taskSelectedList+=("FALSE")
 
 installSteam()
 {
-  addRepo "multiverse"
+
   addPackage "steam"
 }
 
@@ -596,17 +531,6 @@ postSteam()
   mv libstdc++.so.6 libstdc++.so.6.bak
 }
 #------------------------------------------------------------------------------
-taskNames+=("Install 0 A.D.")
-taskMessages+=("Processing 0 A.D.")
-taskDescriptions+=("0 A.D. is a game of ancient warfare, similar to Age of Empires")
-taskRecipes+=("install0AD")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-install0AD()
-{
-  addPackage "0ad"
-}
 #------------------------------------------------------------------------------
 taskNames+=("Install Wine")
 taskMessages+=("Processing Wine")
@@ -746,7 +670,8 @@ taskSelectedList+=("FALSE")
 
 installUtilities()
 {
-  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils"
+  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip htop gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 synaptic lzip tilix tilix-common  python-avahi \
+avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd  avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils tomboy lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Glipper")
@@ -770,20 +695,24 @@ taskSelectedList+=("FALSE")
 
 installDevBundle()
 {
-  addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheck"
+  addRepo "ppa:danielrichter2007/grub-customizer"
+  addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheckpastebinit alacarte autogen shutter cmake git curl  htop gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 synaptic lzip tilix tilix-common  python-avahi avahi-autoipd ibnet-rendezvous-publish-backend-avahi-perl  avahi-autoipd   avahi-utils \
+avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip gparted grub-customizer python-nautilus nautilus-share nautilus-script-collection-svn nautilus-script-audio-convert nautilus-image-converter nautilus-filename-repairer nautilus-dropbox nautilus-admin gnome-sushi folder-color vim-scripts vim-lastplace svnkit gnome-packagekit gnome-packagekit-data gstreamer1.0-packagekit \
+packagekit-gtk3-module packagekit-tools ssh ubuntu-restricted-extras gnome-tweaks cpu-checker python-pip \
+fonts-roboto python3-pip browser-plugin-vlc libvlc-bin libvlc5 libvlccore9 vlc vlc-bin vlc-data vlc-plugin-access-extra vlc-plugin-base  vlc-plugin-video-output vlc-plugin-qt git gnome-shell-extension-tilix-dropdown gnome-shell-extension-tilix-shortcut gnome-shell-extension-multi-monitors gnome-shell-extension-taskbar gnome-shell-extensions gpaste gnome-shell-extensions-gpaste libgpaste-common svn2git subversion-tools ssvnc backupninja ssh"
 }
 #------------------------------------------------------------------------------
-taskNames+=("Install Boost libraries")
+taskNames+=("Install Cockpit")
 taskMessages+=("Processing Boost")
-taskDescriptions+=("Boost C++ libraries")
+taskDescriptions+=("Web interface for your system")
 taskRecipes+=("installBoost")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
-installBoost()
+installCockpit()
 {
-  addPackage "libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
+  addPackage "cockpit-dashboard cockpit-docker cockpit-networkmanager cockpit-packagekit cockpit-bridge cockpit"
 }
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 taskNames+=("Install CodeLite")
 taskMessages+=("Processing CodeLite")
@@ -965,17 +894,6 @@ taskRecipes+=("installTuxGuitar")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 
-installTuxGuitar()
-{
-  addPackage "tuxguitar tuxguitar-alsa tuxguitar-jsa tuxguitar-oss"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install Ukuu")
-taskMessages+=("Processing Ukuu")
-taskDescriptions+=("A kernel update tool")
-taskRecipes+=("installUkuu")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
 
 installUkuu()
 {
@@ -1008,25 +926,6 @@ installANoise()
   addPackage "anoise"
 }
 #------------------------------------------------------------------------------
-taskNames+=("Install Minetest")
-taskMessages+=("Processing Minetest")
-taskDescriptions+=("A Minecraft clone")
-taskRecipes+=("installMinetest")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installMinetest()
-{
-  addRepo "ppa:minetestdevs/stable"
-  addPackage "minetest"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install Typora")
-taskMessages+=("Processing Typora")
-taskDescriptions+=("A minimalist text editor")
-taskRecipes+=("installTypora")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
 
 installTypora()
 {
@@ -1194,6 +1093,7 @@ installDocker(){
 snap install docker
  }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
  taskNames+=("Install Vagrant")
  taskMessages+=("Processing Vagrant")
  taskDescriptions+=("Creates an environment similar to chroot for development")
@@ -1201,8 +1101,9 @@ snap install docker
  taskPostInstallations+=("")
  taskSelectedList+=("false")
 installVagrant(){
-addPackage "vagrant"
+addPackage "vagrant-libvirt vagrant-lxc vagrant-mutate vagrant-sshfs vagrant-cachier vagrant-digitalocean python-vagrant "
  }
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
  taskNames+=("Install Jenkins")
  taskMessages+=("Processing Jenkins")
@@ -1214,6 +1115,7 @@ installJenkins(){
 snap install jenkins --classic
  }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
  taskNames+=("Install lxd")
  taskMessages+=("Processing lxd")
  taskDescriptions+=("Docker Alternative // FOSS Containers")
@@ -1224,6 +1126,8 @@ installlxd(){
 snap install lxd --classic
  }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
  taskNames+=("Install conjure-up")
  taskMessages+=("Processing conjure-up")
  taskDescriptions+=("Canonical's Half Baked Autoinstaller")
@@ -1234,6 +1138,8 @@ installConjure-Up(){
 snap install conjure-up --classic
  }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
  taskNames+=("Install Kotlin")
  taskMessages+=("Processing Kotlin")
  taskDescriptions+=("JetBrainz in-house Language")
@@ -1244,6 +1150,7 @@ installKotlin(){
 snap install kotlin --classic
  }
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
  taskNames+=("Install Kotlin-Native")
  taskMessages+=("Processing Kotlin-Native")
  taskDescriptions+=("Kotlin for Mobile")
@@ -1253,6 +1160,7 @@ snap install kotlin --classic
 installKotlinNative(){
 snap install kotlin-native --classic
  }
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
  taskNames+=("Install Go")
  taskMessages+=("Processing Go")
@@ -1885,7 +1793,7 @@ snap install coulr
 #------------------------------------------------------------------------------
  taskNames+=("Install dosage")
  taskMessages+=("Processing dosage")
- taskDescriptions+=("Usenet Downloader")
+ taskDescriptions+=("")
  taskRecipes+=("installdosage")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
@@ -1897,7 +1805,7 @@ snap install dosage
 #------------------------------------------------------------------------------
  taskNames+=("Install bobrossquotes")
  taskMessages+=("Processing bobrossquotes")
- taskDescriptions+=("Usenet Downloader")
+ taskDescriptions+=("Commandline tool for happy little accidents")
  taskRecipes+=("installbobrossquotes")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
@@ -1906,6 +1814,103 @@ snap install bobrossquotes
  }
 
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+taskNames+=("Install Grub Customizer")
+taskMessages+=("Processing Grub Customizer")
+taskDescriptions+=("A hackable text editor")
+taskRecipes+=("installGrubCustom")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installGrubCustom()
+{
+  addRepo "ppa:danielrichter2007/grub-customizer -y"
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 081525E2B4F1283B
+  addPackage "grub-customizer"
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Apt Fast")
+ taskMessages+=("Processing Apt Fast")
+ taskDescriptions+=("Commandline tool for happy little accidents")
+ taskRecipes+=("installAptFast")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installAptFast(){
+addRepo "ppa:apt-fast/stable"
+addPackage "apt-fast"
+ }
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install X11 Utilities")
+ taskMessages+=("Processing x11 Utilities")
+ taskDescriptions+=("Display Stuff Over SSH")
+ taskRecipes+=("installX11")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installAptFast(){
+
+addPackage "x11vnc"
+addPackage "xtv"
+addPackage "x11-apps"
+addPackage "x11-session-utils"
+addPackage "xserver-xorg-video-all"
+addPackage "x11-utils"
+addPackage "x11-common"
+addPackage "x11-xserver-utils"
+addPackage "freerdp-x11"
+addPackage "x11vnc-data"
+addPackage "libx11-freedesktop-desktopentry-perl"
+addPackage "tigervnc-xorg-extension"
+addPackage "xorg"
+addPackage "freerdp2-shadow-x11"
+addPackage "freerdp2-x11"
+addPackage "xserver-xorg-video-all"
+ }
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install Virtualization Package")
+ taskMessages+=("Processing Virtualization Package")
+ taskDescriptions+=("Commandline tool for happy little accidents")
+ taskRecipes+=("installVirtualizationPackage")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installVirtualizationPackage(){
+addPackage "virt-manager"
+addPackage "virtinst"
+addPackage "bridge-utils"
+addPackage "ethtool"
+addPackage "fonts-ubuntu-console"
+addPackage "libvirt0"
+addPackage "cloud-initramfs-dyn-netconf"
+addPackage "cloud-initramfs-copymods"
+addPackage "cloud-guest-utils"
+addPackage "virt-viewer"
+addPackage "open-vm-tools"
+addPackage "overlayroot"
+addPackage "aqemu"
+addPackage "qemu-kvm"
+addPackage "libtk8.6"
+addPackage "tcl"
+addPackage "tcl8.6"
+addPackage "tk"
+addPackage "tk8.6"
+addPackage "libvirt-bin"
+addPackage "vde2"
+ }
+
+#------------------------------------------------------------------------------
+ taskNames+=("Install Deluge")
+ taskMessages+=("Processing Deluge")
+ taskDescriptions+=("Commandline tool for happy little accidents")
+ taskRecipes+=("installDeluge")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installDeluge(){
+
+addPackage "deluged  deluge deluge-common deluge-console deluge-gtk deluge-torrent deluge-web deluged"
+ }
 
 # INSTRUCTIONS
 # To add a new task, add a new section above this block copying and pasting the following 5 lines:
@@ -1981,9 +1986,21 @@ function main()
   dpkg --configure -a
 
   # Get list of already added repos
-  installedRepos=()
-  getRepoList
 
+  installedRepos=()
+
+  getRepoList
+# Add Repos
+  addRepo "multiverse universe restricted"
+
+  #Install Snap and Flatpak
+  if ! $(checkPackage snapd); then
+    installPackage "snapd"
+  fi
+
+  if ! $(checkPackage flatpak); then
+    installPackage "flatpak"
+  fi
 
   # Check if Zenity package is installed
   if ! $(checkPackage zenity); then
@@ -2041,7 +2058,7 @@ function main()
     done
 
     # Warning message and confirmation
-    message="The selected tasks will be performed now. "
+    message="The selected tasks will be performed now. \n"
     message+="You won't be able to cancel this operation once started.\n"
     message+="Are you sure you want to continue?"
 
@@ -2076,7 +2093,7 @@ function main()
     for i in "${!taskNames[@]}"; do
       if [[ $tasks == *"${taskNames[i]}"* ]]; then
 
-        echo -e "# Processing recipes... [${taskMessages[i]}]"
+        echo -e "# Processing your infinite possibilities... [${taskMessages[i]}]"
 
         echo -e "--------------------------------------------------------------------------------------------------\n" >> $errorLog
         echo -e "RECIPE ${taskNames[$i]}\n" >> $errorLog
