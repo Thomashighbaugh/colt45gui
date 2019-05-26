@@ -189,6 +189,27 @@ installTransmission()
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
+ taskNames+=("Install Deluge")
+ taskMessages+=("Processing Deluge")
+ taskDescriptions+=("Torrent Downloader")
+ taskRecipes+=("installDeluge")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installDeluge(){
+
+addPackage "deluged"
+addPackage "deluge"
+addPackage "deluge-common"
+addPackage "deluge-console"
+addPackage "deluge-gtk"
+addPackage "deluge-torrent"
+addPackage "deluge-web"
+ }
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install VirtualBox")
 taskMessages+=("Processing VirtualBox")
 taskDescriptions+=("A virtualization software to run other OSes on top of your current OS")
@@ -232,6 +253,34 @@ installSlack()
 {
 sudo snap install slack --classic
 }
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install Zulip")
+ taskMessages+=("Processing Zulip")
+ taskDescriptions+=("Slack Clone")
+ taskRecipes+=("installzulip")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installzulip(){
+sudo snap install zulip
+ }
+ #
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install Flock Chat")
+ taskMessages+=("Processing Flock Chat")
+ taskDescriptions+=("Slack Like Chat Application")
+ taskRecipes+=("installFlockChat")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installFlockChat(){
+sudo snap install flock-chat
+ }
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -351,6 +400,34 @@ installLMMS()
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
+ taskNames+=("Install Clementine")
+ taskMessages+=("Processing Clementine")
+ taskDescriptions+=("Music Player for Various File Types")
+ taskRecipes+=("installClementine")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installClementine(){
+sudo snap install clementine
+ }
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install Poddr")
+ taskMessages+=("Processing Poddr")
+ taskDescriptions+=("Podcast Client")
+ taskRecipes+=("installPoddr")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installPoddr(){
+sudo snap install poddr
+ }
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Gimp")
 taskMessages+=("Processing Gimp")
 taskDescriptions+=("Gimp is an image editor")
@@ -422,31 +499,6 @@ installDiffPdf()
   addPackage "diffpdf"
 }
 #
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-taskNames+=("Install Steam")
-taskMessages+=("Processing Steam")
-taskDescriptions+=("A game digital distribution platform developed by Valve")
-taskRecipes+=("installSteam")
-taskPostInstallations+=("postSteam")
-taskSelectedList+=("FALSE")
-
-installSteam()
-{
-
-  addPackage "steam"
-}
-
-postSteam()
-{
-  cd "$HOME"/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu
-  mv libstdc++.so.6 libstdc++.so.6.bak
-  cd "$HOME"/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu
-  mv libstdc++.so.6 libstdc++.so.6.bak
-}
-
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -571,26 +623,11 @@ installDuplicity()
 {
   addPackage "duplicity"
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-taskNames+=("Install UNetbootin")
-taskMessages+=("Processing UNetbootin")
-taskDescriptions+=("Tool for creating Live USB drives")
-taskRecipes+=("installUNetbootin")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installUNetbootin()
-{
-  addPackage "unetbootin"
-}
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
 taskNames+=("Install FileZilla")
 taskMessages+=("Processing FileZilla")
 taskDescriptions+=("Download and upload files via FTP, FTPS and SFTP")
@@ -602,6 +639,7 @@ installFileZilla()
 {
   addPackage "filezilla"
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -657,21 +695,7 @@ installUtilities()
   addPackage "liboost-dev" 
   addPackage "libboost-system-dev"
 }
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-taskNames+=("Install Glipper")
-taskMessages+=("Processing Glipper")
-taskDescriptions+=("Gnome clipboard manager")
-taskRecipes+=("installGlipper")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installGlipper()
-{
-  addPackage "glipper"
-}
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -685,8 +709,7 @@ taskSelectedList+=("FALSE")
 
 installDevBundle()
 {
-
-addPackage "build-essential" 
+addPackage "build-essential"
 addPackage "cmake" 
 addPackage "cmake-gui" 
 addPackage "cmake-curses-gui" 
@@ -737,6 +760,7 @@ addPackage "octave"
   addPackage "ssvnc" 
   addPackage "backupninja"
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -756,11 +780,11 @@ installCockpit()
   addPackage "cockpit-bridge" 
   addPackage "cockpit"
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
 taskNames+=("Install CodeLite")
 taskMessages+=("Processing CodeLite")
 taskDescriptions+=("A C/C++, PHP and JavaScript IDE for developers")
@@ -774,6 +798,7 @@ installCodeLite()
   addPackage "wxcrafter"
   addPackage "codelite-plugins"
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -805,11 +830,11 @@ installAtom()
 
 snap install  --classic atom 
 }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
 taskNames+=("Install GitKraken")
 taskMessages+=("Processing GitKraken")
 taskDescriptions+=("A graphical git client from Axosoft")
@@ -821,48 +846,11 @@ installGitKraken()
 {
   sudo snap install gitkraken --classic 
 }
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-taskNames+=("Install SmartGit")
-taskMessages+=("Processing SmartGit")
-taskDescriptions+=("A graphical git client from Syntevo")
-taskRecipes+=("installSmartGit")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installSmartGit()
-{
-  installPackage "https://www.syntevo.com/downloads/smartgit/smartgit-17_1_6.deb"
-}
 #
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-taskNames+=("Install rEFInd")
-taskMessages+=("Processing rEFInd")
-taskDescriptions+=("An EFI boot manager")
-taskRecipes+=("installrEFInd")
-taskPostInstallations+=("postrEFInd")
-taskSelectedList+=("FALSE")
-
-installrEFInd()
-{
-  addRepo "ppa:rodsmith/refind"
-  addPackage "refind"
-}
-
-postrEFInd()
-{
-  refind-install --shim /boot/efi/EFI/ubuntu/shimx64.efi --localkeys
-  refind-mkdefault
-}
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Discord")
 taskMessages+=("Processing Discord")
 taskDescriptions+=("Gaming voice/chat service")
@@ -875,11 +863,11 @@ installDiscord()
    installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
 
 }
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Gnome System Monitor")
 taskMessages+=("Processing Gnome System Monitor")
 taskDescriptions+=("A system resource usage monitor")
@@ -891,11 +879,11 @@ installSystemMonitor()
 {
   addPackage "gnome-system-monitor"
 }
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Kdenlive")
 taskMessages+=("Processing Kdenlive")
 taskDescriptions+=("A video editing suite")
@@ -907,10 +895,11 @@ installKdenlive()
 {
   addPackage "kdenlive"
 }
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Openshot")
 taskMessages+=("Processing Openshot")
 taskDescriptions+=("A video editor")
@@ -922,10 +911,11 @@ installOpenshot()
 {
   addPackage "openshot-qt"
 }
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 taskNames+=("Install Wireshark")
 taskMessages+=("Processing Wireshark")
 taskDescriptions+=("A network traffic analyzer")
@@ -1084,7 +1074,7 @@ snap install lxd --classic
 installJenkins(){
 snap install jenkins --classic
  }
-
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1093,17 +1083,17 @@ snap install jenkins --classic
  taskNames+=("Install Conjure-Up")
  taskMessages+=("Processing Conjure-Up")
  taskDescriptions+=("Canonical's Half Baked Autoinstaller")
- taskRecipes+=("installconjure-up")
+ taskRecipes+=("installConjureUp")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installConjure-Up(){
+installConjureUp(){
 snap install conjure-up --classic
  }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
  taskNames+=("Install Ubuntu Make")
  taskMessages+=("Processing Ubuntu Make")
  taskDescriptions+=("Canonical's development environment provisioner that handle all dependencies, even those which aren't in Ubuntu itself, and install latest versions of the desired and recommended tools")
@@ -1113,11 +1103,11 @@ snap install conjure-up --classic
 installubuntumake(){
 sudo snap install ubuntu-make --classic
  }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
  taskNames+=("Install Kotlin")
  taskMessages+=("Processing Kotlin")
  taskDescriptions+=("JetBrainz in-house Language")
@@ -1127,6 +1117,7 @@ sudo snap install ubuntu-make --classic
 installKotlin(){
 snap install kotlin --classic
  }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1140,6 +1131,7 @@ snap install kotlin --classic
 installKotlinNative(){
 sudo snap install kotlin-native --classic
  }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1153,11 +1145,11 @@ sudo snap install kotlin-native --classic
 installGo(){
 sudo snap install go --channel=1.11/stable --classic
  }
+#
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
  taskNames+=("Install Ruby")
  taskMessages+=("Processing Ruby")
  taskDescriptions+=("Language for Back End Use Primarily")
@@ -1167,20 +1159,6 @@ sudo snap install go --channel=1.11/stable --classic
 installRuby(){
 sudo snap install ruby --classic
  }
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install GRV")
- taskMessages+=("Processing GRV")
- taskDescriptions+=("Git Repo Manipulation from the Command Line")
- taskRecipes+=("installGRV")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installgrv(){
-sudo snap install grv
- }
-
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1209,20 +1187,7 @@ sudo snap install doctl --classic
 installawsctl(){
 sudo snap install aws-ctl --classic
  }
-#
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Poddr")
- taskMessages+=("Processing Poddr")
- taskDescriptions+=("Podcast Client")
- taskRecipes+=("installPoddr")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installPoddr(){
-sudo snap install poddr
- }
+
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1237,20 +1202,7 @@ sudo snap install poddr
 installYakYak(){
 sudo snap install yakyak
  }
-#
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Flock Chat")
- taskMessages+=("Processing Flock Chat")
- taskDescriptions+=("Slack Like Chat Application")
- taskRecipes+=("installFlockChat")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installFlockChat(){
-sudo snap install flock-chat
- }
+
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1606,34 +1558,7 @@ sudo snap install udemy
 installRavenReader(){
 sudo snap install raven-reader
  }
-#
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Clementine")
- taskMessages+=("Processing Clementine")
- taskDescriptions+=("Music Player for Various File Types")
- taskRecipes+=("installClementine")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installClementine(){
-sudo snap install clementine
- }
-#
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Zulip")
- taskMessages+=("Processing Zulip")
- taskDescriptions+=("Slack Clone")
- taskRecipes+=("installzulip")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installzulip(){
-sudo snap install zulip
- }
+
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1838,27 +1763,7 @@ addPackage "bridge-utils"
 addPackage "virtinst"
 addPackage "virt-manager"
  }
-#
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Deluge")
- taskMessages+=("Processing Deluge")
- taskDescriptions+=("Torrent Downloader")
- taskRecipes+=("installDeluge")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installDeluge(){
 
-addPackage "deluged"
-addPackage "deluge"
-addPackage "deluge-common"
-addPackage "deluge-console"
-addPackage "deluge-gtk"
-addPackage "deluge-torrent"
-addPackage "deluge-web"
- }
 #
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
