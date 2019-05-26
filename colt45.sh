@@ -421,26 +421,6 @@ installEvince()
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
-taskNames+=("Install Master PDF Editor")
-taskMessages+=("Processing Master PDF Editor")
-taskDescriptions+=("A convenient and smart PDF editor for Linux")
-taskRecipes+=("installMasterPDF")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installMasterPDF()
-{
-  if [[ $OSarch == "x86_64" ]]; then
-    installPackage "http://get.code-industry.net/public/master-pdf-editor-3.7.10_amd64.deb"
-  else
-    installPackage "http://get.code-industry.net/public/master-pdf-editor-3.7.10_i386.deb"
-  fi
-}
-#
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
-##------------------------------------------------------------------------------
 installDiffPdf()
 {
   addPackage "diffpdf"
@@ -896,12 +876,8 @@ taskSelectedList+=("FALSE")
 
 installDiscord()
 {
-  if [[ $OSarch == "x86_64" ]]; then
-    installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
-  else
-    >&2 echo "Your system is not supported by Discord"
-    return 1
-  fi
+   installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
+
 }
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
@@ -1076,12 +1052,12 @@ snap install docker
  taskSelectedList+=("false")
 installVagrant(){
   sudo snap install --classic vagrant
-  addPackage "vagrant-libvirt" 
-  addPackage "vagrant-lxc" 
-  addPackage "vagrant-mutate" 
-  addPackage "vagrant-sshfs" 
-  addPackage "vagrant-cachier" 
-  addPackage "vagrant-digitalocean" 
+  addPackage "vagrant-libvirt"
+  addPackage "vagrant-lxc"
+  addPackage "vagrant-mutate"
+  addPackage "vagrant-sshfs"
+  addPackage "vagrant-cachier"
+  addPackage "vagrant-digitalocean"
   addPackage "python-vagrant"
  }
 
@@ -1339,7 +1315,7 @@ sudo snap install gravit-designer
  taskRecipes+=("installVector")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installGravitDesigner(){
+installVector(){
 sudo snap install vector
  }
 #------------------------------------------------------------------------------
@@ -1583,7 +1559,7 @@ sudo snap install htop
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
- 
+
  taskNames+=("Install CoPay")
  taskMessages+=("Processing CoPay")
  taskDescriptions+=("Shared BTC Wallet")
@@ -1716,8 +1692,8 @@ sudo snap install mdbook
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
- taskNames+=("Install Electron Wallet")
- taskMessages+=("Processing Electron Wallet")
+ taskNames+=("Install Electrum Wallet")
+ taskMessages+=("Processing Electrum Wallet")
  taskDescriptions+=("Secure BTC Wallet")
  taskRecipes+=("installelectrum")
  taskPostInstallations+=("")
@@ -1725,19 +1701,7 @@ sudo snap install mdbook
 installelectrum(){
 sudo snap install electrum
  }
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
- taskNames+=("Install Parity Wallet")
- taskMessages+=("Processing Parity")
- taskDescriptions+=("Ethereum Client")
- taskRecipes+=("installparity")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installparity(){
-sudo snap install parity
- }
+
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -1791,22 +1755,12 @@ taskSelectedList+=("FALSE")
 
 installGrubCustom()
 {
-  addRepo "ppa:danielrichter2007/grub-customizer -y"
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 081525E2B4F1283B
+  addRepo "ppa:danielrichter2007/grub-customizer"
   addPackage "grub-customizer"
 }
+#
 #------------------------------------------------------------------------------
- taskNames+=("Install Apt Fast")
- taskMessages+=("Processing Apt Fast")
- taskDescriptions+=("APT pasckage manager that preloads all of the dependencies you will need before hand and FAST")
- taskRecipes+=("installAptFast")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installAptFast(){
-addRepo "ppa:apt-fast/stable"
-addPackage "apt-fast"
- }
-
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
  taskNames+=("Install X11 Utilities")
@@ -1815,22 +1769,22 @@ addPackage "apt-fast"
  taskRecipes+=("installX11")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installAptFast(){
-addPackage "x11-session-utils" 
-addPackage "xtv" 
-addPackage "x11-apps" 
-addPackage "x11vnc" 
-addPackage "xserver-xorg-video-all" 
-addPackage "x11-utils" 
-addPackage "x11-common" 
-addPackage "x11-xserver-utils" 
-addPackage "freerdp-x11" 
-addPackage "x11vnc-data" 
-addPackage "libx11-freedesktop-desktopentry-perl" 
-addPackage "tigervnc-xorg-extension" 
-addPackage "xserver-xorg-video-all" 
-addPackage "freerdp2-x11" 
-addPackage "freerdp2-shadow-x11" 
+installX11(){
+addPackage "x11-session-utils"
+addPackage "xtv"
+addPackage "x11-apps"
+addPackage "x11vnc"
+addPackage "xserver-xorg-video-all"
+addPackage "x11-utils"
+addPackage "x11-common"
+addPackage "x11-xserver-utils"
+addPackage "freerdp-x11"
+addPackage "x11vnc-data"
+addPackage "libx11-freedesktop-desktopentry-perl"
+addPackage "tigervnc-xorg-extension"
+addPackage "xserver-xorg-video-all"
+addPackage "freerdp2-x11"
+addPackage "freerdp2-shadow-x11"
 addPackage "xorg"
  }
 
@@ -1843,23 +1797,23 @@ addPackage "xorg"
  taskPostInstallations+=("")
  taskSelectedList+=("false")
 installVirtualizationPackage(){
-addPackage "vde2" 
-addPackage "libvirt-bin" 
-addPackage "tk8.6" 
-addPackage "tk" 
-addPackage "tcl8.6" 
-addPackage "tcl" 
-addPackage "libtk8.6" 
-addPackage "qemu-kvm" 
-addPackage "aqemu" 
-addPackage "overlayroot" 
-addPackage "open-vm-tools" 
-addPackage "virt-viewer" 
-addPackage "libvirt0" 
-addPackage "fonts-ubuntu-console" 
-addPackage "ethtool" 
-addPackage "bridge-utils" 
-addPackage "virtinst" 
+addPackage "vde2"
+addPackage "libvirt-bin"
+addPackage "tk8.6"
+addPackage "tk"
+addPackage "tcl8.6"
+addPackage "tcl"
+addPackage "libtk8.6"
+addPackage "qemu-kvm"
+addPackage "aqemu"
+addPackage "overlayroot"
+addPackage "open-vm-tools"
+addPackage "virt-viewer"
+addPackage "libvirt0"
+addPackage "fonts-ubuntu-console"
+addPackage "ethtool"
+addPackage "bridge-utils"
+addPackage "virtinst"
 addPackage "virt-manager"
  }
 
@@ -1872,12 +1826,12 @@ addPackage "virt-manager"
  taskSelectedList+=("false")
 installDeluge(){
 
-addPackage "deluged"  
-addPackage "deluge" 
-addPackage "deluge-common" 
-addPackage "deluge-console" 
-addPackage "deluge-gtk" 
-addPackage "deluge-torrent" 
+addPackage "deluged"
+addPackage "deluge"
+addPackage "deluge-common"
+addPackage "deluge-console"
+addPackage "deluge-gtk"
+addPackage "deluge-torrent"
 addPackage "deluge-web"
  }
 
@@ -1917,8 +1871,8 @@ function main()
   # Check that the recipe arrays are well formed
 
   if [[ ${#taskNames[@]} -ne ${#taskMessages[@]} ]] ||
-     [[ ${#taskMessages[@]} -ne ${#taskDescriptions[@]} ]] || 
-     [[ ${#taskDescriptions[@]} -ne ${#taskRecipes[@]} ]] || 
+     [[ ${#taskMessages[@]} -ne ${#taskDescriptions[@]} ]] ||
+     [[ ${#taskDescriptions[@]} -ne ${#taskRecipes[@]} ]] ||
      [[ ${#taskRecipes[@]} -ne ${#taskPostInstallations[@]} ]] ||
      [[ ${#taskPostInstallations[@]} -ne ${#taskSelectedList[@]} ]] ; then
 
@@ -1967,7 +1921,7 @@ function main()
 
   #Install Snap and Flatpak
   if ! $(checkPackage snapd); then
-    installPackage "snapd"
+    addPackage "snapd"
   fi
 
 
@@ -2052,8 +2006,6 @@ function main()
     echo -e "$logHeader" >> $debugLog
   fi
 
-  chown "$SUDO_USER":"$SUDO_USER" $errorLog
-  chown "$SUDO_USER":"$SUDO_USER" $debugLog
 
   # Perform all tasks
   (
@@ -2137,7 +2089,7 @@ function main()
     else
       echo "# All tasks completed succesfully"
       if $(checkPackage libnotify-bin); then
-        su "$SUDO_USER" -c 'notify-send -i utilities-terminal colt45 "All tasks completed succesfully"'
+        su "$SUDO_USER" -c 'notify-send -i utilities-terminal colt45 "All tasks completed!"'
       fi
     fi
   ) |
@@ -2147,8 +2099,8 @@ function main()
          --title="colt45" \
          --text="Processing all tasks" \
          --percentage=0 \
-         --height 300 \
-         --width 700
+         --height 500 \
+         --width 500
 
   # Show error list from the error log
   errors=false
@@ -2184,24 +2136,17 @@ function main()
 
       echo -e "$message$(tail -n "$startLine" "$errorLog")" |
       zenity --text-info --height 700 --width 800 --title="colt45"
-      
+
     fi
   fi
 }
+#-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 # End of main function
-
-
-function packageIsInstalled()
-{
-  LANG=C
-  apt-cache policy "$1" | grep "Installed: (none)" &> /dev/null
-
-  if [[ $? == 0 ]]; then
-    echo false
-  else
-    echo true
-  fi
-}
+#-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
 
 function packageExists()
