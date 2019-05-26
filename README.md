@@ -42,6 +42,8 @@ With this repository, I have packaged a simple webpage to serve as the face of t
 
 - **Thank you** to Ubuntu for breaking often enough to motivate me to write out this monster of a shell script so I don't have to remember all the programs I install on a fresh system or go through the tedious process of individually installing them with apt-get or using synaptic. 
 
+-The logo is not my original art. Shout out to whoever made that hysterical rendering of the Go Gopher and to GitHub user parnurzeal who hosts the image. 
+
 ## To Do 
 - [ ] create snap install function to replace the full command
 - [ ] add additional apps useful to others
