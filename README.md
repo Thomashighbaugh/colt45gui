@@ -14,10 +14,13 @@ Replacing Previous Incarnations of the colt45 Provisioning System is this single
 ## USE 
 
 To run the GUI simply download the script (colt45gui.sh) then navigate to the directory 
-``git clone https://github.com/Thomashighbaugh/colt45gui
-cd ~/Downloads/colt45gui``
+```
+git clone https://github.com/Thomashighbaugh/colt45gui
 
-Then make it executiable 
+cd colt45gui/
+```
+
+Then make the script executiable 
 
 `sudo chmod +x colt45gui.sh`
 
