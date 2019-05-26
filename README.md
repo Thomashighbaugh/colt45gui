@@ -1,8 +1,8 @@
 # colt45: GUI Edition
 
 ![alt text](https://raw.githubusercontent.com/parnurzeal/gorequest/gh-pages/images/Gopher_GoRequest_400x300.jpg "colt45: Get Some")
-
-
+---
+## Introduction
 Replacing Previous Incarnations of the colt45 Provisioning System is this single script solution. Its a long script, to be sure, but that nonetheless increases the simplicity of the script as no cross file references or terminal-inception logic exists to complicate the functionality of the script (or its maintanence). 
 
 
