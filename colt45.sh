@@ -169,6 +169,17 @@ installzulip()
 {
   sudo snap install zulip
  }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install YakYak")
+ taskMessages+=("Processing YakYak")
+ taskDescriptions+=("Chat Client")
+ taskRecipes+=("installYakYak")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installYakYak()
+{
+  sudo snap install yakyak
+}
 #------------------------------------------------------------------------------
 taskNames+=("Install VLC")
 taskMessages+=("Processing VLC")
@@ -176,13 +187,11 @@ taskDescriptions+=("The most famous multimedia player")
 taskRecipes+=("installVLC")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
 installVLC()
 {
   sudo snap install vlc
   addPackage "browser-plugin-vlc libvlc-bin libvlc5 libvlccore9 vlc-bin vlc-data vlc-plugin-access-extra vlc-plugin-base vlc-plugin-video-output vlc-plugin-qt"
 }
-#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 taskNames+=("Install Handbrake")
 taskMessages+=("Processing Handbrake")
@@ -190,10 +199,9 @@ taskDescriptions+=("A video transcoder")
 taskRecipes+=("installHandbrake")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
 installHandbrake()
 {
-snap install handbrake-jz
+  snap install handbrake-jz
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Spotify")
@@ -202,10 +210,9 @@ taskDescriptions+=("One of the best music streaming apps")
 taskRecipes+=("installSpotify")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
 installSpotify()
 {
-snap install spotify
+  snap install spotify
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Audacity")
@@ -214,7 +221,6 @@ taskDescriptions+=("Record and edit audio files")
 taskRecipes+=("installAudacity")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
 installAudacity()
 {
   addPackage "audacity"
@@ -243,6 +249,26 @@ installLMMS()
 {
   addPackage "lmms"
 }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Clementine")
+ taskMessages+=("Processing Clementine")
+ taskDescriptions+=("Music Player for Various File Types")
+ taskRecipes+=("installClementine")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installClementine(){
+sudo snap install clementine
+ }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install Poddr")
+ taskMessages+=("Processing Poddr")
+ taskDescriptions+=("Podcast Client")
+ taskRecipes+=("installPoddr")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installPoddr(){
+sudo snap install poddr
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install Gimp")
 taskMessages+=("Processing Gimp")
@@ -279,35 +305,7 @@ installBlender()
 {
   addPackage "blender"
 }
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
-taskNames+=("Install TexMaker")
-taskMessages+=("Processing TexMaker")
-taskDescriptions+=("A LateX development environment")
-taskRecipes+=("installTexMaker")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
 
-installTexMaker()
-{
-  addPackage "texmaker"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install DiffPdf")
-taskMessages+=("Processing DiffPdf")
-taskDescriptions+=("Tool to compare PDF files")
-taskRecipes+=("installDiffPdf")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installDiffPdf()
-{
-  addPackage "diffpdf"
-}
-#------------------------------------------------------------------------------
 taskNames+=("Install Wine")
 taskMessages+=("Processing Wine")
 taskDescriptions+=("A tool to install Windows software on Linux")
@@ -317,7 +315,7 @@ taskSelectedList+=("FALSE")
 
 installWine()
 {
- snap install wine
+  snap install wine
   apt-get update
   apt-get install --install-recommends winehq-stable
 }
@@ -358,6 +356,19 @@ installGParted()
   addPackage "gparted"
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Disk utility")
+taskMessages+=("Processing Disk utility")
+taskDescriptions+=("A tool to manage your drives")
+taskRecipes+=("installDiskUtility")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installDiskUtility()
+{
+  addPackage "gnome-disk-utility"
+}
+
+#------------------------------------------------------------------------------
 taskNames+=("Install MenuLibre")
 taskMessages+=("Processing MenuLibre")
 taskDescriptions+=("Add or remove applications from your menu")
@@ -368,6 +379,18 @@ taskSelectedList+=("FALSE")
 installMenuLibre()
 {
   addPackage "menulibre"
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install Alacarte")
+taskMessages+=("Processing Alacarte")
+taskDescriptions+=("Another Menu Editor! Two is better than one :]")
+taskRecipes+=("installAlacarte")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installAlacarte()
+{
+  addPackage "alacarte"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Seahorse")
@@ -382,6 +405,7 @@ installSeahorse()
   addPackage "seahorse"
 }
 #------------------------------------------------------------------------------
+
 taskNames+=("Install Duplicity")
 taskMessages+=("Processing Duplicity")
 taskDescriptions+=("Keep your files safe by making automatic backups")
@@ -395,28 +419,17 @@ installDuplicity()
 }
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-taskNames+=("Install FileZilla")
-taskMessages+=("Processing FileZilla")
-taskDescriptions+=("Download and upload files via FTP, FTPS and SFTP")
-taskRecipes+=("installFileZilla")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installFileZilla()
-{
-  addPackage "filezilla"
-}
 #------------------------------------------------------------------------------
 taskNames+=("Install utilities bundle")
 taskMessages+=("Processing utilities bundle")
-taskDescriptions+=("Java, zip, rar and exfat tools")
+taskDescriptions+=("File format utilities with some fun extras")
 taskRecipes+=("installUtilities")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 
 installUtilities()
 {
-  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils"
+addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 lzip python-avahi avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
 }
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -453,7 +466,7 @@ taskSelectedList+=("FALSE")
 
 installVSCode()
 {
-snap install vscode
+  snap install vscode
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Atom")
@@ -465,7 +478,7 @@ taskSelectedList+=("FALSE")
 
 installAtom()
 {
-snap install atom --classic
+  snap install atom --classic
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install GitKraken")
@@ -477,7 +490,7 @@ taskSelectedList+=("FALSE")
 
 installGitKraken()
 {
-snap install gitkraken
+  snap install gitkraken
 }
 
 #------------------------------------------------------------------------------
@@ -490,7 +503,7 @@ taskSelectedList+=("FALSE")
 
 installDiscord()
 {
-    installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
+  installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
 }
 
 taskNames+=("Install Gnome System Monitor")
@@ -520,31 +533,26 @@ installWireshark()
   addPackage "wireshark"
 }
 #------------------------------------------------------------------------------
-# INSTRUCTIONS
-# To add a new task, add a new section above this block copying and pasting the following 5 lines:
-
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+# TASK TEMPLATE
+#------------------------------------------------------------------------------
 # taskNames+=("<Task Name>")
 # taskMessages+=("<Task message>")
 # taskDescriptions+=("<Task description>")
 # taskRecipes+=("<Task recipe function>")
 # taskPostInstallations+=("<Task post-installation function>")
 # taskSelectedList+=("Task boolean value")
-
-# Then, uncomment them and:
-
-# Replace <Task Name> with the new task's name.
-# Replace <Task message> with the message that will be displayed while.
-# performing the task, i.e. "Upgrading the system" .
-# Replace <Task description> with the new task's description.
-# Replace <Task recipe function> with the function name which will contain
-# the necessary commands to perform the task and write that function. Do NOT use sudo in it.
-# Replace <Task post-installation function> with the function name which will contain
-# the necessary commands to execute after installation and write that function. Do NOT use sudo in it.
-# If you don't need anything to be run after installatio, just leave the function blank
-# or use taskPostInstallations+=("")
-# Replace <Task boolean value> with TRUE of FALSE to make this task to be marked by default.
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 # END OF TASK LIST ############################################################
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
 # Main function
