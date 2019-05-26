@@ -23,7 +23,7 @@ git clone https://github.com/Thomashighbaugh/colt45gui
 cd colt45gui/
 ```
 
-Then make the script executiable 
+Then make the script executable
 
 `sudo chmod +x colt45gui.sh`
 
@@ -42,12 +42,12 @@ With this repository, I have packaged a simple webpage to serve as the face of t
 
 - **Thank you** to Ubuntu for breaking often enough to motivate me to write out this monster of a shell script so I don't have to remember all the programs I install on a fresh system or go through the tedious process of individually installing them with apt-get or using synaptic. 
 
--The logo is not my original art. Shout out to whoever made that hysterical rendering of the Go Gopher and to GitHub user parnurzeal who hosts the image. 
+-The logo is not my original art. Shout out to whoever made that hysterical rendering of the Go Gopher and to GitHub user "parnurzeal" who hosts the image.
 
 ## To Do 
 - [ ] create snap install function to replace the full command
 - [ ] add additional apps useful to others
-- [ ] sort the apps by category
-- [ ] resize the windows for more comfortable use on desktop 
+- [x] sort the apps by category
+- [x] resize the windows for more comfortable use on desktop
 - [x] fix repository overload
--
+
