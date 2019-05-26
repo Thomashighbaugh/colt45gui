@@ -40,7 +40,8 @@ With this repository, I have packaged a simple webpage to serve as the face of t
 - **Thank you** to Ubuntu for breaking often enough to motivate me to write out this monster of a shell script so I don't have to remember all the programs I install on a fresh system or go through the tedious process of individually installing them with apt-get or using synaptic. 
 
 ## To Do 
-- create snap install function to replace the full command []
-- add additional apps useful to others []
-- sort the apps by category []
-- resize the windows desktop []
+- []create snap install function to replace the full command
+- []add additional apps useful to others
+- []sort the apps by category
+- []resize the windows for more comfortable use on desktop 
+- [x]fix repository overload
