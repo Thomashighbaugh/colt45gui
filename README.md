@@ -1,4 +1,6 @@
-# colt45 v3: GUI colt45
+# colt45: GUI Edition
+
+[logo]:https://raw.githubusercontent.com/parnurzeal/gorequest/gh-pages/images/Gopher_GoRequest_400x300.jpg
 
 Replacing Previous Incarnations of the colt45 Provisioning System is this single script solution. Its a long script, to be sure, but that nonetheless increases the simplicity of the script as no cross file references or terminal-inception logic exists to complicate the functionality of the script (or its maintanence). 
 
@@ -40,8 +42,9 @@ With this repository, I have packaged a simple webpage to serve as the face of t
 - **Thank you** to Ubuntu for breaking often enough to motivate me to write out this monster of a shell script so I don't have to remember all the programs I install on a fresh system or go through the tedious process of individually installing them with apt-get or using synaptic. 
 
 ## To Do 
-- []create snap install function to replace the full command
-- []add additional apps useful to others
-- []sort the apps by category
-- []resize the windows for more comfortable use on desktop 
-- [x]fix repository overload
+- [] create snap install function to replace the full command
+- [] add additional apps useful to others
+- [] sort the apps by category
+- [] resize the windows for more comfortable use on desktop 
+- [x] fix repository overload
+-
