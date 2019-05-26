@@ -51,7 +51,7 @@ taskSelectedList+=("FALSE")
 
 installChromium()
 {
-snap install chromium
+  snap install chromium
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Firefox")
@@ -63,7 +63,7 @@ taskSelectedList+=("FALSE")
 
 installFirefox()
 {
-snap install firefox
+  snap install firefox
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Opera")
@@ -75,8 +75,19 @@ taskSelectedList+=("FALSE")
 
 installOpera()
 {
-snap install opera
+  snap install opera
 }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Brave")
+ taskMessages+=("Processing Brave")
+ taskDescriptions+=("Secure (supposedly) Browser")
+ taskRecipes+=("installBrave")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installBrave()
+{
+  sudo snap install brave --classic
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install Transmission")
 taskMessages+=("Processing Transmission")
@@ -84,12 +95,21 @@ taskDescriptions+=("A light bittorrent download client")
 taskRecipes+=("installTransmission")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
 installTransmission()
 {
   addPackage "transmission-gtk"
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Deluge")
+ taskMessages+=("Processing Deluge")
+ taskDescriptions+=("Torrent Downloader")
+ taskRecipes+=("installDeluge")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installDeluge()
+{
+  addPackage "deluged deluge deluge-common deluge-console deluge-gtk deluge-torrent deluge-web"
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install VirtualBox")
 taskMessages+=("Processing VirtualBox")
@@ -100,7 +120,7 @@ taskSelectedList+=("FALSE")
 
 installVirtualBox()
 {
-  addPackage "virtualbox"
+  addPackage "virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-dkms virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-source"
 }
 
 #------------------------------------------------------------------------------
@@ -113,7 +133,7 @@ taskSelectedList+=("FALSE")
 
 installTelegram()
 {
-snap install telegram-client
+  snap install telegram-desktop
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Slack")
@@ -128,6 +148,28 @@ installSlack()
   installPackage "https://downloads.slack-edge.com/linux_releases/slack-desktop-2.3.3-amd64.deb"
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Flock Chat")
+ taskMessages+=("Processing Flock Chat")
+ taskDescriptions+=("Slack Like Chat Application")
+ taskRecipes+=("installFlockChat")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installFlockChat()
+{
+  sudo snap install flock-chat
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Zulip")
+ taskMessages+=("Processing Zulip")
+ taskDescriptions+=("Slack Clone")
+ taskRecipes+=("installzulip")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installzulip()
+{
+  sudo snap install zulip
+ }
+#------------------------------------------------------------------------------
 taskNames+=("Install VLC")
 taskMessages+=("Processing VLC")
 taskDescriptions+=("The most famous multimedia player")
@@ -137,8 +179,8 @@ taskSelectedList+=("FALSE")
 
 installVLC()
 {
-sudo snap install vlc
-addPackage "browser-plugin-vlc libvlc-bin libvlc5 libvlccore9 vlc-bin vlc-data vlc-plugin-access-extra vlc-plugin-base vlc-plugin-video-output vlc-plugin-qt"
+  sudo snap install vlc
+  addPackage "browser-plugin-vlc libvlc-bin libvlc5 libvlccore9 vlc-bin vlc-data vlc-plugin-access-extra vlc-plugin-base vlc-plugin-video-output vlc-plugin-qt"
 }
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -151,7 +193,7 @@ taskSelectedList+=("FALSE")
 
 installHandbrake()
 {
-  addPackage "handbrake-gtk handbrake-cli"
+snap install handbrake-jz
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Spotify")
