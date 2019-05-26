@@ -11,8 +11,7 @@ Replacing Previous Incarnations of the colt45 Provisioning System is this single
 - Ubuntu Based Distro Installed on Your System 
   - I use Ubuntu Budgie exclusively now, so the script is designed with it in mind
 - Some Idea of What You Want to Use Your System For
-- Snap capabilities (optional) - offered as a package in the program but having snapd installed prevents the need from selecting that option. To install snapd:
-    ``sudo apt-get install snapd`` 
+- Snap capabilities (deprecated) - **PROVIDED WITH THE APP NEVERMIND**
 
 ## USE 
 
