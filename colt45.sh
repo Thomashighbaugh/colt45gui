@@ -122,7 +122,145 @@ installVirtualBox()
 {
   addPackage "virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-dkms virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-source"
 }
-
+ #------------------------------------------------------------------------------
+ #------------------------------------------------------------------------------
+ taskNames+=("Install Docker")
+ taskMessages+=("Processing Docker")
+ taskDescriptions+=("Container technology made by idiots")
+ taskRecipes+=("installDocker")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installDocker()
+{
+snap install docker
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Vagrant")
+ taskMessages+=("Processing Vagrant")
+ taskDescriptions+=("Creates an environment similar to chroot for development")
+ taskRecipes+=("installVagrant")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installVagrant()
+{
+  sudo snap install --classic vagrant
+  addPackage "vagrant-libvirt vagrant-lxc vagrant-mutate vagrant-sshfs vagrant-cachier vagrant-digitalocean python-vagrant"
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install LXD")
+ taskMessages+=("Processing LXD")
+ taskDescriptions+=("Docker Alternative by Canonical")
+ taskRecipes+=("installlxd")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installlxd()
+{
+snap install lxd --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Jenkins")
+ taskMessages+=("Processing Jenkins")
+ taskDescriptions+=("Automation Software")
+ taskRecipes+=("installJenkins")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installJenkins()
+{
+  snap install jenkins --classic
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Conjure-Up")
+ taskMessages+=("Processing Conjure-Up")
+ taskDescriptions+=("Canonical's Half Baked Autoinstaller")
+ taskRecipes+=("installConjureUp")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installConjureUp()
+{
+snap install conjure-up --classic
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Ubuntu Make")
+ taskMessages+=("Processing Ubuntu Make")
+ taskDescriptions+=("Canonical's development environment provisioner that handle all dependencies, even those which aren't in Ubuntu itself, and install latest versions of the desired and recommended tools")
+ taskRecipes+=("installubuntumake")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installubuntumake()
+{
+sudo snap install ubuntu-make --classic
+ }
+#------------------------------------------------------------------------------
+  taskNames+=("Install Digital Ocean CTL")
+ taskMessages+=("Processing Digital Ocean CTL")
+ taskDescriptions+=("Command Line Droplet Control")
+ taskRecipes+=("installdoctl")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installdoctl()
+{
+sudo snap install doctl --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install AWS CTL")
+ taskMessages+=("Processing AWS CTL")
+ taskDescriptions+=("Command Line Control of AWS")
+ taskRecipes+=("installawsctl")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installawsctl()
+{
+sudo snap install aws-ctl --classic
+ }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install FKILL")
+ taskMessages+=("Processing FKILL")
+ taskDescriptions+=("Process Obliterater")
+ taskRecipes+=("installFKILL")
+ taskPostInstallations+=("postFKILL")
+ taskSelectedList+=("false")
+installFKILL()
+{
+sudo snap install fkill --classic
+ }
+ postFKILL()
+{
+sudo snap connect fkill:process-control :process-control
+sudo snap connect fkill:system-observe :system-observel
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Nextcloud Server")
+ taskMessages+=("Processing Nextcloud")
+ taskDescriptions+=("The Nextcloud server application as a Snap Package")
+ taskRecipes+=("installNextcloud")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installNextcloud()
+{
+sudo snap install nextcloud
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Nextcloud Client")
+ taskMessages+=("Processing Nextcloud Client")
+ taskDescriptions+=("Desktop client for Nextcloud")
+ taskRecipes+=("installNextcloudClient")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installNextcloudClient()
+{
+sudo snap install nextcloud-client
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install YakYak")
+ taskMessages+=("Processing YakYak")
+ taskDescriptions+=("Chat Client")
+ taskRecipes+=("installYakYak")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installYakYak()
+{
+  sudo snap install yakyak
+}
 #------------------------------------------------------------------------------
 taskNames+=("Install Telegram")
 taskMessages+=("Processing Telegram")
@@ -134,6 +272,17 @@ taskSelectedList+=("FALSE")
 installTelegram()
 {
   snap install telegram-desktop
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install Discord")
+taskMessages+=("Processing Discord")
+taskDescriptions+=("Gaming voice/chat service")
+taskRecipes+=("installDiscord")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installDiscord()
+{
+  installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Slack")
@@ -169,17 +318,6 @@ installzulip()
 {
   sudo snap install zulip
  }
- #------------------------------------------------------------------------------
- taskNames+=("Install YakYak")
- taskMessages+=("Processing YakYak")
- taskDescriptions+=("Chat Client")
- taskRecipes+=("installYakYak")
- taskPostInstallations+=("")
- taskSelectedList+=("false")
-installYakYak()
-{
-  sudo snap install yakyak
-}
 #------------------------------------------------------------------------------
 taskNames+=("Install VLC")
 taskMessages+=("Processing VLC")
@@ -203,6 +341,16 @@ installHandbrake()
 {
   snap install handbrake-jz
 }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Udemy")
+ taskMessages+=("Processing Udemy")
+ taskDescriptions+=("Easy Access to Udemy")
+ taskRecipes+=("installudemy")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installudemy(){
+sudo snap install udemy
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install Spotify")
 taskMessages+=("Processing Spotify...")
@@ -256,7 +404,8 @@ installLMMS()
  taskRecipes+=("installClementine")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installClementine(){
+installClementine()
+{
 sudo snap install clementine
  }
  #------------------------------------------------------------------------------
@@ -266,7 +415,8 @@ sudo snap install clementine
  taskRecipes+=("installPoddr")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installPoddr(){
+installPoddr()
+{
 sudo snap install poddr
  }
 #------------------------------------------------------------------------------
@@ -332,18 +482,6 @@ installPlayOnLinux()
   addPackage "playonlinux"
 }
 #------------------------------------------------------------------------------
-taskNames+=("Install Disk utility")
-taskMessages+=("Processing Disk utility")
-taskDescriptions+=("A tool to manage your drives")
-taskRecipes+=("installDiskUtility")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installDiskUtility()
-{
-  addPackage "gnome-disk-utility"
-}
-#------------------------------------------------------------------------------
 taskNames+=("Install GParted")
 taskMessages+=("Processing GParted")
 taskDescriptions+=("A tool to make partitions in your hard drives")
@@ -405,6 +543,17 @@ installSeahorse()
   addPackage "seahorse"
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install BitWarden")
+ taskMessages+=("Processing BitWarden")
+ taskDescriptions+=("Password Manager")
+ taskRecipes+=("installBitWarden")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installBitWarden()
+{
+sudo snap install bitwarden
+ }
+#------------------------------------------------------------------------------
 
 taskNames+=("Install Duplicity")
 taskMessages+=("Processing Duplicity")
@@ -418,20 +567,61 @@ installDuplicity()
   addPackage "duplicity"
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Simple Note")
+ taskMessages+=("Processing Simple Note")
+ taskDescriptions+=("A 'simple' note taker, decent replacement for Giganotes or EverNote")
+ taskRecipes+=("installSimpleNote")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installSimpleNote()
+{
+sudo snap install simplenote
+ }
 #------------------------------------------------------------------------------
+ taskNames+=("Install QOwnNotes")
+ taskMessages+=("Processing QOwnNotes")
+ taskDescriptions+=("Cloud sync ready Note Taker, works with NextCloud")
+ taskRecipes+=("installQOwnNotes")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installQOwnNotes()
+{
+sudo snap install qownnotes
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install MicroPad")
+ taskMessages+=("Processing MicroPad")
+ taskDescriptions+=("Independent online-capable note taker made in New Zealand")
+ taskRecipes+=("installMicroPad")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installMicroPad()
+{
+sudo snap install micropad
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Outwiker")
+ taskMessages+=("Processing Outwiker")
+ taskDescriptions+=("Wiki Maker")
+ taskRecipes+=("installOutwiker")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installOutwiker()
+{
+sudo snap install outwiker --beta
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install utilities bundle")
 taskMessages+=("Processing utilities bundle")
-taskDescriptions+=("File format utilities with some fun extras")
+taskDescriptions+=("Java, zip, rar and exfat tools")
 taskRecipes+=("installUtilities")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 
 installUtilities()
 {
-addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 lzip python-avahi avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
+  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 lzip python-avahi avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
 }
-#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 taskNames+=("Install developer bundle")
 taskMessages+=("Processing developer bundle")
@@ -442,19 +632,7 @@ taskSelectedList+=("FALSE")
 
 installDevBundle()
 {
-  addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheck"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install CodeLite")
-taskMessages+=("Processing CodeLite")
-taskDescriptions+=("A C/C++, PHP and JavaScript IDE for developers")
-taskRecipes+=("installCodeLite")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installCodeLite()
-{
-  addPackage "codelite wxcrafter codelite-plugins"
+addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheckpastebinit autogen shutter cmake git curl gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 ssh python-pip python3-pip gpaste svn2git subversion-tools  ssvnc backupninja"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Visual Studio Code")
@@ -481,6 +659,63 @@ installAtom()
   snap install atom --classic
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install CodeLite")
+taskMessages+=("Processing CodeLite")
+taskDescriptions+=("A C/C++, PHP and JavaScript IDE for developers")
+taskRecipes+=("installCodeLite")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installCodeLite()
+{
+  addPackage "codelite wxcrafter codelite-plugins"
+}
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+ taskNames+=("Install Cacher")
+ taskMessages+=("Processing Cacher")
+ taskDescriptions+=("A snippet management system")
+ taskRecipes+=("installCacher")
+ taskPostInstallations+=(" ")
+ taskSelectedList+=("false")
+installCacher()
+{
+ snap install cacher
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Sublime Text")
+ taskMessages+=("Basic Code Writing Program")
+ taskDescriptions+=("installSublime")
+ taskRecipes+=("installSublime")
+ taskPostInstallations+=("")
+ taskSelectedList+=("Task boolean value")
+installSublime()
+{
+  snap install --classic sublime-text
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Brackets")
+ taskMessages+=("Processing Brackets")
+ taskDescriptions+=("Another Text Editor w/ Live Preview")
+ taskRecipes+=("installBrackets")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installBrackets()
+{
+  snap install --classic brackets
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Simply Fortran")
+ taskMessages+=("Processing Simply Fortran")
+ taskDescriptions+=("IDE for ForTran")
+ taskRecipes+=("installSimplyForTran")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installSimplyFortran()
+{
+  snap install simplyfortran --classic
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install GitKraken")
 taskMessages+=("Processing GitKraken")
 taskDescriptions+=("A graphical git client from Axosoft")
@@ -491,19 +726,6 @@ taskSelectedList+=("FALSE")
 installGitKraken()
 {
   snap install gitkraken
-}
-
-#------------------------------------------------------------------------------
-taskNames+=("Install Discord")
-taskMessages+=("Processing Discord")
-taskDescriptions+=("Gaming voice/chat service")
-taskRecipes+=("installDiscord")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installDiscord()
-{
-  installPackage "https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb"
 }
 
 taskNames+=("Install Gnome System Monitor")
