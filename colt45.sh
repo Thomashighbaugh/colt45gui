@@ -40,7 +40,46 @@ installRestrictedExtras()
 {
   addPackage "ubuntu-restricted-extras"
 }
-
+#------------------------------------------------------------------------------
+taskNames+=("Install Snap Store")
+ taskMessages+=("Processing Snap Store")
+ taskDescriptions+=("Snap Package Manager GUI")
+ taskRecipes+=("installSnapStore")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installSnapStore()
+{
+sudo snap install snap-store
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install CoPay")
+ taskMessages+=("Processing CoPay")
+ taskDescriptions+=("Shared BTC Wallet")
+ taskRecipes+=("installCoPay")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installCoPay(){
+sudo snap install CoPay
+ }
+ taskNames+=("Install BitPay")
+ taskMessages+=("Processing BitPay")
+ taskDescriptions+=("Secure BTC wallet")
+ taskRecipes+=("installBitPay")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installBitPay(){
+sudo snap install bitpay
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Electrum Wallet")
+ taskMessages+=("Processing Electrum Wallet")
+ taskDescriptions+=("Secure BTC Wallet")
+ taskRecipes+=("installelectrum")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installelectrum(){
+sudo snap install electrum
+ }
 #------------------------------------------------------------------------------
 taskNames+=("Install Chromium")
 taskMessages+=("Processing Chromium")
@@ -239,6 +278,18 @@ installNextcloud()
 {
 sudo snap install nextcloud
  }
+
+#------------------------------------------------------------------------------
+ taskNames+=("Install Kata Containers")
+ taskMessages+=("Processing Kata Containers")
+ taskDescriptions+=("A halfway point between Virtualization and Containers. New, slim VMs")
+ taskRecipes+=("installKata")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installKata()
+{
+ snap install kata-containers --classic
+}
 #------------------------------------------------------------------------------
  taskNames+=("Install Nextcloud Client")
  taskMessages+=("Processing Nextcloud Client")
@@ -250,6 +301,52 @@ installNextcloudClient()
 {
 sudo snap install nextcloud-client
  }
+#------------------------------------------------------------------------------
+taskNames+=("Install Cockpit")
+taskMessages+=("Processing Boost")
+taskDescriptions+=("Web interface for your system")
+taskRecipes+=("installBoost")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installCockpit()
+{
+  addPackage "cockpit-dashboard cockpit-docker cockpit-networkmanager cockpit-packagekit cockpit-bridge cockpit"
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install Gnome System Monitor")
+taskMessages+=("Processing Gnome System Monitor")
+taskDescriptions+=("A system resource usage monitor")
+taskRecipes+=("installSystemMonitor")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installSystemMonitor()
+{
+  addPackage "gnome-system-monitor"
+}
+#------------------------------------------------------------------------------
+
+ taskNames+=("Install HTop")
+ taskMessages+=("Processing HTop")
+ taskDescriptions+=("CTL System Monitor")
+ taskRecipes+=("installhtop")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installhtop(){
+sudo snap install htop
+ }
+ #------------------------------------------------------------------------------
+taskNames+=("Install Cubic")
+taskMessages+=("Processing Cubic")
+taskDescriptions+=("Create Custom Live USBs")
+taskRecipes+=("installCubic")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installCubic()
+{
+  addPackage "cubic"
+    addRepo "ppa:cubic-wizard/release"
+}
 #------------------------------------------------------------------------------
  taskNames+=("Install YakYak")
  taskMessages+=("Processing YakYak")
@@ -342,13 +439,26 @@ installHandbrake()
   snap install handbrake-jz
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Kdenlive")
+taskMessages+=("Processing Kdenlive")
+taskDescriptions+=("A video editing suite")
+taskRecipes+=("installKdenlive")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installKdenlive()
+{
+  addPackage "kdenlive"
+}
+#------------------------------------------------------------------------------
  taskNames+=("Install Udemy")
  taskMessages+=("Processing Udemy")
  taskDescriptions+=("Easy Access to Udemy")
  taskRecipes+=("installudemy")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installudemy(){
+installudemy()
+{
 sudo snap install udemy
  }
 #------------------------------------------------------------------------------
@@ -372,6 +482,17 @@ taskSelectedList+=("FALSE")
 installAudacity()
 {
   addPackage "audacity"
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install Transitions DJ")
+taskMessages+=("Processing Transitions DJ")
+taskDescriptions+=("Music Mixing App for Live DJing and mixtape production")
+taskRecipes+=("installTransitionsDJ")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installTransitionsDJ()
+{
+sudo snap install transitionsdj
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Soundconverter")
@@ -430,6 +551,117 @@ taskSelectedList+=("FALSE")
 installGimp()
 {
   addPackage "gimp"
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Instagraph")
+ taskMessages+=("Processing Instagraph")
+ taskDescriptions+=("A desktop instagram client")
+ taskRecipes+=("installInstagraph")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installInstagraph(){
+sudo snap install instagraph
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Gravit Designer")
+ taskMessages+=("Processing Gravit Designer")
+ taskDescriptions+=("Vector drawing application minus the Adobe fee.")
+ taskRecipes+=("installGravitDesigner")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installGravitDesigner(){
+sudo snap install gravit-designer
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Vector")
+ taskMessages+=("Processing Gravit Designer")
+ taskDescriptions+=("Vector drawing application, most like Illistrator.")
+ taskRecipes+=("installVector")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installVector(){
+sudo snap install vector
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Pencilsheep")
+ taskMessages+=("Processing Pencilsheep")
+ taskDescriptions+=("GPU optimized image editing. The most like Photoshop of the options available from this list")
+ taskRecipes+=("installPencilsheep")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installPencilsheep(){
+sudo snap install pencilsheep
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Imagenes")
+ taskMessages+=("Processing Imagenes")
+ taskDescriptions+=("Google Photos on Desktop")
+ taskRecipes+=("installImagenes")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installImagenes(){
+sudo snap install imagenes
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Mountain Tapir")
+ taskMessages+=("Processing Mountain Tapir")
+ taskDescriptions+=("Picture Stitcher for those bomb Instagram posts")
+ taskRecipes+=("installMountainTapir")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installMountainTapir(){
+sudo snap install mountain-tapir
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Photoscape")
+ taskMessages+=("Processing Photoscape")
+ taskDescriptions+=("Image editing suite")
+ taskRecipes+=("installPhotoscape")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installPhotoscape(){
+sudo snap install photoscape
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install XNviewmp")
+ taskMessages+=("Processing XNviewmp")
+ taskDescriptions+=("Image Viewer")
+ taskRecipes+=("installXNviewmp")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installXNviewmp(){
+sudo snap install xnviewmp
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Krop")
+ taskMessages+=("Processing Krop")
+ taskDescriptions+=("Image Cropper")
+ taskRecipes+=("installkrop")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installkrop(){
+sudo snap install krop
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install XNsketch")
+ taskMessages+=("Processing XNsketch")
+ taskDescriptions+=("Image Styler")
+ taskRecipes+=("installXNsketch")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installXNsketch(){
+sudo snap install xnsketch
+ }
+ #------------------------------------------------------------------------------
+taskNames+=("Install Openshot")
+taskMessages+=("Processing Openshot")
+taskDescriptions+=("A video editor")
+taskRecipes+=("installOpenshot")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installOpenshot()
+{
+  addPackage "openshot-qt"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Inkscape")
@@ -531,6 +763,20 @@ installAlacarte()
   addPackage "alacarte"
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Wireshark")
+taskMessages+=("Processing Wireshark")
+taskDescriptions+=("A network traffic analyzer")
+taskRecipes+=("installWireshark")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installWireshark()
+{
+  echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+  DEBIAN_FRONTEND=noninteractive
+  addPackage "wireshark"
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install Seahorse")
 taskMessages+=("Processing Seahorse")
 taskDescriptions+=("Manage your passwords")
@@ -554,7 +800,6 @@ installBitWarden()
 sudo snap install bitwarden
  }
 #------------------------------------------------------------------------------
-
 taskNames+=("Install Duplicity")
 taskMessages+=("Processing Duplicity")
 taskDescriptions+=("Keep your files safe by making automatic backups")
@@ -566,6 +811,27 @@ installDuplicity()
 {
   addPackage "duplicity"
 }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Hugo")
+ taskMessages+=("Processing Hugo")
+ taskDescriptions+=("Website Builder")
+ taskRecipes+=("installHugo")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installHugo(){
+snap install hugo --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Wordpress")
+ taskMessages+=("Processing Wordpress")
+ taskDescriptions+=("Desktop Application for Wordpress.com")
+ taskRecipes+=("installWordpress")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installWordpress(){
+sudo snap install wordpress-desktop
+ }
+
 #------------------------------------------------------------------------------
  taskNames+=("Install Simple Note")
  taskMessages+=("Processing Simple Note")
@@ -610,29 +876,61 @@ installOutwiker()
 {
 sudo snap install outwiker --beta
  }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install HTMLDoc")
+ taskMessages+=("Processing HTMLDoc")
+ taskDescriptions+=("Application Shifting HTML into a PDF (for books)")
+ taskRecipes+=("installhtmldoc")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installhtmldoc()
+{
+sudo snap install htmldoc
+ }
 #------------------------------------------------------------------------------
-taskNames+=("Install utilities bundle")
-taskMessages+=("Processing utilities bundle")
-taskDescriptions+=("Java, zip, rar and exfat tools")
-taskRecipes+=("installUtilities")
+ taskNames+=("Install OMan")
+ taskMessages+=("Processing OMan")
+ taskDescriptions+=("Man Page Reader")
+ taskRecipes+=("installoman")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installoman()
+{
+sudo snap install oman
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install MDBook")
+ taskMessages+=("Processing MDBook")
+ taskDescriptions+=("CLT for turning MarkDown files into a book")
+ taskRecipes+=("installmdbook")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installmdbook()
+{
+sudo snap install mdbook
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Bob Ross Quotes")
+ taskMessages+=("Processing Bob Ross Quotes")
+ taskDescriptions+=("Commandline tool for happy little accidents")
+ taskRecipes+=("installbobrossquotes")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installbobrossquotes()
+{
+sudo snap install bobrossquotes
+ }
+#------------------------------------------------------------------------------
+taskNames+=("Install Grub Customizer")
+taskMessages+=("Processing Grub Customizer")
+taskDescriptions+=("A hackable text editor")
+taskRecipes+=("installGrubCustom")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
-installUtilities()
+installGrubCustom()
 {
-  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 lzip python-avahi avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
-}
-#------------------------------------------------------------------------------
-taskNames+=("Install developer bundle")
-taskMessages+=("Processing developer bundle")
-taskDescriptions+=("Tools for developers: build-essential, cmake, git, svn, java, python, octave, autotools...")
-taskRecipes+=("installDevBundle")
-taskPostInstallations+=("")
-taskSelectedList+=("FALSE")
-
-installDevBundle()
-{
-addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheckpastebinit autogen shutter cmake git curl gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 ssh python-pip python3-pip gpaste svn2git subversion-tools  ssvnc backupninja"
+  addRepo "ppa:danielrichter2007/grub-customizer"
+  addPackage "grub-customizer"
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Visual Studio Code")
@@ -670,7 +968,6 @@ installCodeLite()
 {
   addPackage "codelite wxcrafter codelite-plugins"
 }
-#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
  taskNames+=("Install Cacher")
  taskMessages+=("Processing Cacher")
@@ -727,34 +1024,101 @@ installGitKraken()
 {
   snap install gitkraken
 }
-
-taskNames+=("Install Gnome System Monitor")
-taskMessages+=("Processing Gnome System Monitor")
-taskDescriptions+=("A system resource usage monitor")
-taskRecipes+=("installSystemMonitor")
+#------------------------------------------------------------------------------
+ taskNames+=("Install Coulr")
+ taskMessages+=("Processing Coulr")
+ taskDescriptions+=("A pleasant little color picker program")
+ taskRecipes+=("installCoulr")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installCoulr()
+{
+sudo snap install coulr
+ }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install Kotlin")
+ taskMessages+=("Processing Kotlin")
+ taskDescriptions+=("JetBrainz in-house Language")
+ taskRecipes+=("installKotlin")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installKotlin(){
+snap install kotlin --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Kotlin-Native")
+ taskMessages+=("Processing Kotlin-Native")
+ taskDescriptions+=("Kotlin for Mobile")
+ taskRecipes+=("installKotlinNative")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installKotlinNative(){
+sudo snap install kotlin-native --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Go")
+ taskMessages+=("Processing Go")
+ taskDescriptions+=("Language, Google's Answer to JS")
+ taskRecipes+=("installGo")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installGo(){
+sudo snap install go --channel=1.11/stable --classic
+ }
+#------------------------------------------------------------------------------
+ taskNames+=("Install Ruby")
+ taskMessages+=("Processing Ruby")
+ taskDescriptions+=("Language for Back End Use Primarily")
+ taskRecipes+=("installRuby")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installRuby(){
+sudo snap install ruby --classic
+ }
+#------------------------------------------------------------------------------
+taskNames+=("Install utilities bundle")
+taskMessages+=("Processing utilities bundle")
+taskDescriptions+=("Java, zip, rar and exfat tools")
+taskRecipes+=("installUtilities")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
-installSystemMonitor()
+installUtilities()
 {
-  addPackage "gnome-system-monitor"
+  addPackage "icedtea-8-plugin openjdk-8-jre p7zip rar exfat-fuse exfat-utils unzip rzip wzip ziptool plzip minizip minilzip gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 lzip python-avahi avahi-autoipd libnet-rendezvous-publish-backend-avahi-perl avahi-autoipd avahi-utils avahi-dnsconfd avahi-ui-utils p7zip-full jlha-utils lzip lunzip bzip2 clzip libboost-dev libboost-serialization-dev libboost-filesystem-dev liboost-dev libboost-system-dev"
 }
 #------------------------------------------------------------------------------
-
-taskNames+=("Install Wireshark")
-taskMessages+=("Processing Wireshark")
-taskDescriptions+=("A network traffic analyzer")
-taskRecipes+=("installWireshark")
+taskNames+=("Install developer bundle")
+taskMessages+=("Processing developer bundle")
+taskDescriptions+=("Tools for developers: build-essential, cmake, git, svn, java, python, octave, autotools...")
+taskRecipes+=("installDevBundle")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
-
-installWireshark()
+installDevBundle()
 {
-  echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
-  DEBIAN_FRONTEND=noninteractive
-  addPackage "wireshark"
+addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheckpastebinit autogen shutter cmake git curl gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 ssh python-pip python3-pip gpaste svn2git subversion-tools  ssvnc backupninja"
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Virtualization Bundle")
+ taskMessages+=("Processing Virtualization Bundle")
+ taskDescriptions+=("Install Applications Useful for Virtualization")
+ taskRecipes+=("installVirtualization")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installVirtualization()
+{
+addPackage "vde2 libvirt-bin tk8.6 tk tcl8.6 tcl libtk8.6 qemu-kvm aqemu overlayroot open-vm-tools virt-viewer libvirt0 fonts-ubuntu-console ethtool bridge-utils virtinst virt-manager"
+ }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install X11 Utilities")
+ taskMessages+=("Processing x11 Utilities")
+ taskDescriptions+=("Display Stuff Over SSH")
+ taskRecipes+=("installX11")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installX11()
+{
+addPackage "x11-session-utils xtv x11-apps x11vnc xserver-xorg-video-all x11-utils x11-common x11-xserver-utils freerdp-x11 x11vnc-data libx11-freedesktop-desktopentry-perl tigervnc-xorg-extension xserver-xorg-video-all freerdp2-x11 freerdp2-shadow-x11 xorg"
+ }
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -770,6 +1134,7 @@ installWireshark()
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # END OF TASK LIST ############################################################
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -780,6 +1145,8 @@ installWireshark()
 # Main function
 function main()
 {
+# Add Snap Package Functionality
+addPackage "snapd"
   # Check that the recipe arrays are well formed
 
   if [[ ${#taskNames[@]} -ne ${#taskMessages[@]} ]] ||
