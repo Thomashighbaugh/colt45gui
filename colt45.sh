@@ -312,9 +312,9 @@ installNextcloudClient()
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Cockpit")
-taskMessages+=("Processing Boost")
+taskMessages+=("Processing Cockpit")
 taskDescriptions+=("Web interface for your system")
-taskRecipes+=("installBoost")
+taskRecipes+=("installCockpit")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 installCockpit()
@@ -684,16 +684,16 @@ installOpenshot()
   addPackage "openshot-qt"
 }
 #------------------------------------------------------------------------------
-taskNames+=("Install Inkscape")
-taskMessages+=("Processing Inkscape")
-taskDescriptions+=("Create and edit scalable vectorial images")
-taskRecipes+=("installInkscape")
+taskNames+=("Install Lanto")
+taskMessages+=("Processing Lanto")
+taskDescriptions+=("Cre")
+taskRecipes+=("installLanto")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 
-installInkscape()
+installLanto()
 {
-  addPackage "inkscape"
+  snap install lanto
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Blender")
@@ -1246,7 +1246,7 @@ addPackage "snapd"
       --height 1280 \
       --width 1280 \
       --title="colt45" \
-      --text "Select tasks to perform:" \
+      --text "Select packages to install:" \
       --column=Selection \
       --column=Task \
       --column=Description \
