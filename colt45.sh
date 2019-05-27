@@ -371,13 +371,24 @@ installYakYak()
 #------------------------------------------------------------------------------
  taskNames+=("Install Signal")
  taskMessages+=("Processing Signal")
- taskDescriptions+=("Chat Client")
+ taskDescriptions+=("Secure chat and text messages")
  taskRecipes+=("installSignal")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
 installSignal()
 {
    snap install signal-desktop
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Wire")
+ taskMessages+=("Processing Wire")
+ taskDescriptions+=("Secure Skype replacement with accompanying mobile app for Andrroid")
+ taskRecipes+=("installWire")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installWire()
+{
+   snap install wire
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Telegram")
@@ -507,7 +518,7 @@ installAudacity()
 #------------------------------------------------------------------------------
 taskNames+=("Install OBS Studio")
 taskMessages+=("Processing OBS Studio")
-taskDescriptions+=("Record and edit audio files")
+taskDescriptions+=("Useful streaming and recording suite")
 taskRecipes+=("installOBS")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
