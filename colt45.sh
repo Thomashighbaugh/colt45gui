@@ -1264,7 +1264,7 @@ installRuby()
 snap install ruby --classic
  }
 #------------------------------------------------------------------------------
- taskNames+=("Geary")
+ taskNames+=("Install Geary")
  taskMessages+=("Processing Geary")
  taskDescriptions+=("The GNOME Mail Client")
  taskRecipes+=("installGeary")
@@ -1275,7 +1275,7 @@ installGeary()
   addPackage "geary"
 }
 #------------------------------------------------------------------------------
- taskNames+=("Electron Mail")
+ taskNames+=("Install Electron Mail")
  taskMessages+=("Processing Electron Mail")
  taskDescriptions+=("An email client for Protonmail and Tutanota providing end to end encryption")
  taskRecipes+=("installElectronMail")
