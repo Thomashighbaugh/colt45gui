@@ -404,6 +404,17 @@ installSignal()
    snap install signal-desktop
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Facebook Messenger")
+ taskMessages+=("Processing FBMessenger")
+ taskDescriptions+=("Desktop access to Facebook messenger.")
+ taskRecipes+=("installFBMess")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installFBMess()
+{
+   snap install messengerport
+}
+#------------------------------------------------------------------------------
  taskNames+=("Install Wire")
  taskMessages+=("Processing Wire")
  taskDescriptions+=("Secure Skype replacement with accompanying mobile app for Andrroid")
@@ -922,6 +933,17 @@ installSimpleNote()
 {
  snap install simplenote
  }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install InkDrop")
+ taskMessages+=("Processing InkDrop")
+ taskDescriptions+=("A 'simple' note taker, decent replacement for Giganotes or EverNote")
+ taskRecipes+=("installInkDrop")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installInkDrop()
+{
+ snap install inkdrop
+ }
 #------------------------------------------------------------------------------
  taskNames+=("Install QOwnNotes")
  taskMessages+=("Processing QOwnNotes")
@@ -1001,6 +1023,18 @@ installmdbook()
 snap install mdbook
  }
 #------------------------------------------------------------------------------
+taskNames+=("Install SuperProductivity")
+taskMessages+=("Processing SuperProductivity")
+taskDescriptions+=("Attractive 'To Do' application. ")
+taskRecipes+=("installSuperProductivity")
+taskPostInstallations+=("")
+taskSelectedList+=("false")
+installSuperProductivity()
+{
+snap install mdbook
+ }
+#------------------------------------------------------------------------------
+
  taskNames+=("Install Bob Ross Quotes")
  taskMessages+=("Processing Bob Ross Quotes")
  taskDescriptions+=("Commandline tool for happy little accidents")
@@ -1009,7 +1043,7 @@ snap install mdbook
  taskSelectedList+=("false")
 installbobrossquotes()
 {
- snap install bobrossquotes
+ snap install superproductivity
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Grub Customizer")
