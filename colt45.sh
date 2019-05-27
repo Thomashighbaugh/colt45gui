@@ -369,6 +369,17 @@ installYakYak()
    snap install yakyak
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Signal")
+ taskMessages+=("Processing Signal")
+ taskDescriptions+=("Chat Client")
+ taskRecipes+=("installSignal")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installSignal()
+{
+   snap install signal-desktop
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install Telegram")
 taskMessages+=("Processing Telegram")
 taskDescriptions+=("A chat client, similar to Whatsapp, Viber, Facebook Messenger or Google Hangouts")
