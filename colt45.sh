@@ -1104,6 +1104,18 @@ installGitKraken()
   snap install gitkraken
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Github Desktop")
+taskMessages+=("Processing Github Desktop")
+taskDescriptions+=("Desktop application for GitHub allowing the user a unified cross platform experience of the OctoCat.")
+taskRecipes+=("installGithubDesktop")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installGithubDesktop()
+{
+  snap install github-desktop --beta --classic
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install E-Tools")
 taskMessages+=("Processing E-Tools")
 taskDescriptions+=("A toolbox for developers. Code formatter, color picker and more!")
