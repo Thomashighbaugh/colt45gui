@@ -1135,6 +1135,28 @@ installRuby()
 snap install ruby --classic
  }
 #------------------------------------------------------------------------------
+ taskNames+=("Geary")
+ taskMessages+=("Processing Geary")
+ taskDescriptions+=("The GNOME Mail Client")
+ taskRecipes+=("installGeary")
+ taskPostInstallations+=("")
+ taskSelectedList+=("False")
+installGeary()
+{
+  addPackage "geary"
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Electron Mail")
+ taskMessages+=("Processing Electron Mail")
+ taskDescriptions+=("An email client for Protonmail and Tutanota providing end to end encryption")
+ taskRecipes+=("installElectronMail")
+ taskPostInstallations+=("")
+ taskSelectedList+=("False")
+installElectronMail()
+{
+  snap install electron-mail
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install utilities bundle")
 taskMessages+=("Processing utilities bundle")
 taskDescriptions+=("Java, zip, rar and exfat tools")
