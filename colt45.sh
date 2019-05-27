@@ -1385,7 +1385,7 @@ addPackage "snapd"
     else
       echo "# All tasks completed succesfully"
       if $(checkPackage libnotify-bin); then
-        su "$SUDO_USER" -c 'notify-send -i utilities-terminal colt45 "All tasks completed succesfully"'
+        su "$SUDO_USER" -c 'notify-send -i utilities-terminal colt45 "All tasks completed successfully"'
       fi
     fi
   ) |
