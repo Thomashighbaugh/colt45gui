@@ -54,7 +54,7 @@ taskNames+=("Install Snap Store")
  taskSelectedList+=("false")
 installSnapStore()
 {
-sudo snap install snap-store
+ snap install snap-store
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install CoPay")
@@ -63,17 +63,20 @@ sudo snap install snap-store
  taskRecipes+=("installCoPay")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installCoPay(){
-sudo snap install CoPay
+installCoPay()
+{
+ snap install CoPay
  }
+ #------------------------------------------------------------------------------
  taskNames+=("Install BitPay")
  taskMessages+=("Processing BitPay")
  taskDescriptions+=("Secure BTC wallet")
  taskRecipes+=("installBitPay")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installBitPay(){
-sudo snap install bitpay
+installBitPay()
+{
+ snap install bitpay
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Electrum Wallet")
@@ -82,8 +85,9 @@ sudo snap install bitpay
  taskRecipes+=("installelectrum")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installelectrum(){
-sudo snap install electrum
+installelectrum()
+{
+ snap install electrum
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Chromium")
@@ -130,7 +134,7 @@ installOpera()
  taskSelectedList+=("false")
 installBrave()
 {
-  sudo snap install brave --classic
+   snap install brave --classic
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Transmission")
@@ -187,7 +191,7 @@ snap install docker
  taskSelectedList+=("false")
 installVagrant()
 {
-  sudo snap install --classic vagrant
+   snap install --classic vagrant
   addPackage "vagrant-libvirt vagrant-lxc vagrant-mutate vagrant-sshfs vagrant-cachier vagrant-digitalocean python-vagrant"
  }
 #------------------------------------------------------------------------------
@@ -232,7 +236,7 @@ snap install conjure-up --classic
  taskSelectedList+=("false")
 installubuntumake()
 {
-sudo snap install ubuntu-make --classic
+ snap install ubuntu-make --classic
  }
 #------------------------------------------------------------------------------
   taskNames+=("Install Digital Ocean CTL")
@@ -243,7 +247,7 @@ sudo snap install ubuntu-make --classic
  taskSelectedList+=("false")
 installdoctl()
 {
-sudo snap install doctl --classic
+ snap install doctl --classic
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install AWS CTL")
@@ -254,7 +258,7 @@ sudo snap install doctl --classic
  taskSelectedList+=("false")
 installawsctl()
 {
-sudo snap install aws-ctl --classic
+ snap install aws-ctl --classic
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install FKILL")
@@ -265,12 +269,12 @@ sudo snap install aws-ctl --classic
  taskSelectedList+=("false")
 installFKILL()
 {
-sudo snap install fkill --classic
+ snap install fkill --classic
  }
  postFKILL()
 {
-sudo snap connect fkill:process-control :process-control
-sudo snap connect fkill:system-observe :system-observel
+ snap connect fkill:process-control :process-control
+ snap connect fkill:system-observe :system-observel
 }
 #------------------------------------------------------------------------------
  taskNames+=("Install Nextcloud Server")
@@ -281,7 +285,7 @@ sudo snap connect fkill:system-observe :system-observel
  taskSelectedList+=("false")
 installNextcloud()
 {
-sudo snap install nextcloud
+ snap install nextcloud
  }
 
 #------------------------------------------------------------------------------
@@ -304,7 +308,7 @@ installKata()
  taskSelectedList+=("false")
 installNextcloudClient()
 {
-sudo snap install nextcloud-client
+ snap install nextcloud-client
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Cockpit")
@@ -336,8 +340,9 @@ installSystemMonitor()
  taskRecipes+=("installhtop")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installhtop(){
-sudo snap install htop
+installhtop()
+{
+ snap install htop
  }
  #------------------------------------------------------------------------------
 taskNames+=("Install Cubic")
@@ -361,7 +366,7 @@ installCubic()
  taskSelectedList+=("false")
 installYakYak()
 {
-  sudo snap install yakyak
+   snap install yakyak
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Telegram")
@@ -407,7 +412,7 @@ installSlack()
  taskSelectedList+=("false")
 installFlockChat()
 {
-  sudo snap install flock-chat
+   snap install flock-chat
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Zulip")
@@ -418,7 +423,7 @@ installFlockChat()
  taskSelectedList+=("false")
 installzulip()
 {
-  sudo snap install zulip
+   snap install zulip
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install VLC")
@@ -429,7 +434,7 @@ taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 installVLC()
 {
-  sudo snap install vlc
+   snap install vlc
   addPackage "browser-plugin-vlc libvlc-bin libvlc5 libvlccore9 vlc-bin vlc-data vlc-plugin-access-extra vlc-plugin-base vlc-plugin-video-output vlc-plugin-qt"
 }
 #------------------------------------------------------------------------------
@@ -464,7 +469,7 @@ installKdenlive()
  taskSelectedList+=("false")
 installudemy()
 {
-sudo snap install udemy
+ snap install udemy
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Spotify")
@@ -497,7 +502,7 @@ taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 installTransitionsDJ()
 {
-sudo snap install transitionsdj
+ snap install transitionsdj
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install Soundconverter")
@@ -532,7 +537,7 @@ installLMMS()
  taskSelectedList+=("false")
 installClementine()
 {
-sudo snap install clementine
+ snap install clementine
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install Poddr")
@@ -543,7 +548,7 @@ sudo snap install clementine
  taskSelectedList+=("false")
 installPoddr()
 {
-sudo snap install poddr
+ snap install poddr
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Gimp")
@@ -564,8 +569,9 @@ installGimp()
  taskRecipes+=("installInstagraph")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installInstagraph(){
-sudo snap install instagraph
+installInstagraph()
+{
+ snap install instagraph
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Gravit Designer")
@@ -574,8 +580,9 @@ sudo snap install instagraph
  taskRecipes+=("installGravitDesigner")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installGravitDesigner(){
-sudo snap install gravit-designer
+installGravitDesigner()
+{
+ snap install gravit-designer
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Vector")
@@ -584,8 +591,9 @@ sudo snap install gravit-designer
  taskRecipes+=("installVector")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installVector(){
-sudo snap install vector
+installVector()
+{
+ snap install vector
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Pencilsheep")
@@ -594,8 +602,9 @@ sudo snap install vector
  taskRecipes+=("installPencilsheep")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installPencilsheep(){
-sudo snap install pencilsheep
+installPencilsheep()
+{
+ snap install pencilsheep
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Imagenes")
@@ -604,8 +613,9 @@ sudo snap install pencilsheep
  taskRecipes+=("installImagenes")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installImagenes(){
-sudo snap install imagenes
+installImagenes()
+{
+ snap install imagenes
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Mountain Tapir")
@@ -614,8 +624,9 @@ sudo snap install imagenes
  taskRecipes+=("installMountainTapir")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installMountainTapir(){
-sudo snap install mountain-tapir
+installMountainTapir()
+{
+ snap install mountain-tapir
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Photoscape")
@@ -624,8 +635,9 @@ sudo snap install mountain-tapir
  taskRecipes+=("installPhotoscape")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installPhotoscape(){
-sudo snap install photoscape
+installPhotoscape()
+{
+ snap install photoscape
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install XNviewmp")
@@ -634,8 +646,9 @@ sudo snap install photoscape
  taskRecipes+=("installXNviewmp")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installXNviewmp(){
-sudo snap install xnviewmp
+installXNviewmp()
+{
+ snap install xnviewmp
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Krop")
@@ -644,8 +657,9 @@ sudo snap install xnviewmp
  taskRecipes+=("installkrop")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installkrop(){
-sudo snap install krop
+installkrop()
+{
+ snap install krop
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install XNsketch")
@@ -654,8 +668,9 @@ sudo snap install krop
  taskRecipes+=("installXNsketch")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installXNsketch(){
-sudo snap install xnsketch
+installXNsketch()
+{
+ snap install xnsketch
  }
  #------------------------------------------------------------------------------
 taskNames+=("Install Openshot")
@@ -802,7 +817,7 @@ installSeahorse()
  taskSelectedList+=("false")
 installBitWarden()
 {
-sudo snap install bitwarden
+ snap install bitwarden
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Duplicity")
@@ -823,7 +838,8 @@ installDuplicity()
  taskRecipes+=("installHugo")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installHugo(){
+installHugo()
+{
 snap install hugo --classic
  }
 #------------------------------------------------------------------------------
@@ -833,8 +849,9 @@ snap install hugo --classic
  taskRecipes+=("installWordpress")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installWordpress(){
-sudo snap install wordpress-desktop
+installWordpress()
+{
+ snap install wordpress-desktop
  }
 
 #------------------------------------------------------------------------------
@@ -846,7 +863,7 @@ sudo snap install wordpress-desktop
  taskSelectedList+=("false")
 installSimpleNote()
 {
-sudo snap install simplenote
+ snap install simplenote
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install QOwnNotes")
@@ -857,7 +874,7 @@ sudo snap install simplenote
  taskSelectedList+=("false")
 installQOwnNotes()
 {
-sudo snap install qownnotes
+ snap install qownnotes
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install MicroPad")
@@ -868,7 +885,7 @@ sudo snap install qownnotes
  taskSelectedList+=("false")
 installMicroPad()
 {
-sudo snap install micropad
+ snap install micropad
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Outwiker")
@@ -879,7 +896,7 @@ sudo snap install micropad
  taskSelectedList+=("false")
 installOutwiker()
 {
-sudo snap install outwiker --beta
+snap install outwiker --beta
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install HTMLDoc")
@@ -890,7 +907,7 @@ sudo snap install outwiker --beta
  taskSelectedList+=("false")
 installhtmldoc()
 {
-sudo snap install htmldoc
+ snap install htmldoc
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install OMan")
@@ -901,7 +918,7 @@ sudo snap install htmldoc
  taskSelectedList+=("false")
 installoman()
 {
-sudo snap install oman
+ snap install oman
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install MDBook")
@@ -912,7 +929,7 @@ sudo snap install oman
  taskSelectedList+=("false")
 installmdbook()
 {
-sudo snap install mdbook
+snap install mdbook
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Bob Ross Quotes")
@@ -923,7 +940,7 @@ sudo snap install mdbook
  taskSelectedList+=("false")
 installbobrossquotes()
 {
-sudo snap install bobrossquotes
+ snap install bobrossquotes
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install Grub Customizer")
@@ -1038,7 +1055,7 @@ installGitKraken()
  taskSelectedList+=("false")
 installCoulr()
 {
-sudo snap install coulr
+ snap install coulr
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install Kotlin")
@@ -1047,7 +1064,8 @@ sudo snap install coulr
  taskRecipes+=("installKotlin")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installKotlin(){
+installKotlin()
+{
 snap install kotlin --classic
  }
 #------------------------------------------------------------------------------
@@ -1057,8 +1075,9 @@ snap install kotlin --classic
  taskRecipes+=("installKotlinNative")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installKotlinNative(){
-sudo snap install kotlin-native --classic
+installKotlinNative()
+{
+ snap install kotlin-native --classic
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Go")
@@ -1067,8 +1086,9 @@ sudo snap install kotlin-native --classic
  taskRecipes+=("installGo")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installGo(){
-sudo snap install go --channel=1.11/stable --classic
+installGo()
+{
+ snap install go --channel=1.11/stable --classic
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install Ruby")
@@ -1077,8 +1097,9 @@ sudo snap install go --channel=1.11/stable --classic
  taskRecipes+=("installRuby")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installRuby(){
-sudo snap install ruby --classic
+installRuby()
+{
+snap install ruby --classic
  }
 #------------------------------------------------------------------------------
 taskNames+=("Install utilities bundle")
@@ -1222,7 +1243,7 @@ addPackage "snapd"
     done
 
     tasks=$(zenity --list --checklist \
-      --height 720 \
+      --height 1280 \
       --width 1280 \
       --title="colt45" \
       --text "Select tasks to perform:" \
@@ -1374,7 +1395,7 @@ addPackage "snapd"
          --title="colt45" \
          --text="Processing all tasks" \
          --percentage=0 \
-         --height 100 \
+         --height 500 \
          --width 500
 
   # Show error list from the error log
@@ -1410,8 +1431,7 @@ addPackage "snapd"
       message+="---------------------------------------------------------\n\n"
 
       echo -e "$message$(tail -n "$startLine" "$errorLog")" |
-      zenity --text-info --height 700 --width 800 --title="colt45"
-
+      zenity --text-info --height 800 --width 800 --title="colt45"
     fi
   fi
 }
@@ -1504,8 +1524,6 @@ function getRepoList()
     done
   done)"
 }
-
-
 function checkRepo()
 {
   for repo in "${installedRepos[@]}"; do
@@ -1516,8 +1534,6 @@ function checkRepo()
   done
   echo false
 }
-
-
 function addRepo()
 {
   repos+=($1)
@@ -1549,8 +1565,6 @@ function processRepos()
 
   apt-get update
 }
-
-
 function getPassword()
 {
   sudo -k
@@ -1574,10 +1588,7 @@ function getPassword()
     fi
   done
 }
-
-
 # RUN
-
 # Check for root permissions and ask for password in other case
 if [[ $(id -u) == 0 ]]; then
     main
