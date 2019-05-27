@@ -934,15 +934,15 @@ installSimpleNote()
  snap install simplenote
  }
  #------------------------------------------------------------------------------
- taskNames+=("Install InkDrop")
- taskMessages+=("Processing InkDrop")
- taskDescriptions+=("A 'simple' note taker, decent replacement for Giganotes or EverNote")
- taskRecipes+=("installInkDrop")
+ taskNames+=("Install CherryTree")
+ taskMessages+=("Processing CherryTree")
+ taskDescriptions+=("A heirarchial note taker to arrange notes like Wikis")
+ taskRecipes+=("installCherryTree")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
-installInkDrop()
+installCherryTree()
 {
- snap install inkdrop
+    addPackage "cherrytree"
  }
 #------------------------------------------------------------------------------
  taskNames+=("Install QOwnNotes")
@@ -1273,6 +1273,22 @@ installRuby()
 {
 snap install ruby --classic
  }
+ #------------------------------------------------------------------------------
+ taskNames+=("Install NVM & Node")
+ taskMessages+=("Processing NVM & Node")
+ taskDescriptions+=("Language, Google's Answer to JS")
+ taskRecipes+=("installNVM")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installNVM()
+{
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install node
+ }
+
 #------------------------------------------------------------------------------
  taskNames+=("Install Geary")
  taskMessages+=("Processing Geary")
