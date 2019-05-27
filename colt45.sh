@@ -186,11 +186,11 @@ installVirtMan()
 taskNames+=("Install Gnome Boxes")
 taskMessages+=("Processing Gnome Boxes")
 taskDescriptions+=("Gnome's 'easy' VM manager that can run VMs remotely.")
-taskRecipes+=("installVirtMan")
+taskRecipes+=("installGnomeBox")
 taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 
-installVirtMan()
+installGnomeBox()
 {
   addPackage "gnome-boxes"
 }
