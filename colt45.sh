@@ -505,6 +505,17 @@ installAudacity()
   addPackage "audacity"
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install OBS Studio")
+taskMessages+=("Processing OBS Studio")
+taskDescriptions+=("Record and edit audio files")
+taskRecipes+=("installOBS")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+installOBS()
+{
+  snap install obs-studio
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install Transitions DJ")
 taskMessages+=("Processing Transitions DJ")
 taskDescriptions+=("Music Mixing App for Live DJing and mixtape production")
