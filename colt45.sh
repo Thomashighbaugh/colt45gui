@@ -1068,6 +1068,30 @@ installSimplyFortran()
   snap install simplyfortran --classic
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Eclipse")
+taskMessages+=("Processing Eclipse")
+taskDescriptions+=("Legendary C/C++ & Java IDE with an extensible tool platform.")
+taskRecipes+=("installEclipse")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installEclipse()
+{
+  snap install eclipse
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install Postman")
+taskMessages+=("Processing Postman")
+taskDescriptions+=("A development environment for APIs")
+taskRecipes+=("installPostman")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installPostman()
+{
+  snap install postman
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install GitKraken")
 taskMessages+=("Processing GitKraken")
 taskDescriptions+=("A graphical git client from Axosoft")
@@ -1078,6 +1102,18 @@ taskSelectedList+=("FALSE")
 installGitKraken()
 {
   snap install gitkraken
+}
+#------------------------------------------------------------------------------
+taskNames+=("Install E-Tools")
+taskMessages+=("Processing E-Tools")
+taskDescriptions+=("A toolbox for developers. Code formatter, color picker and more!")
+taskRecipes+=("installETools")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installETools()
+{
+  snap install e-tools
 }
 #------------------------------------------------------------------------------
  taskNames+=("Install Coulr")
