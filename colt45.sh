@@ -171,7 +171,31 @@ installVirtualBox()
   addPackage "virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-dkms virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-source"
 }
  #------------------------------------------------------------------------------
+taskNames+=("Install Virtual Machine Manager")
+taskMessages+=("Processing Virtual Machine Manager")
+taskDescriptions+=("The FOSS VirtualBox manager that runs across SSH and features a number of useful features.")
+taskRecipes+=("installVirtMan")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installVirtMan()
+{
+  addPackage "virt-manager"
+}
  #------------------------------------------------------------------------------
+taskNames+=("Install Gnome Boxes")
+taskMessages+=("Processing Gnome Boxes")
+taskDescriptions+=("Gnome's 'easy' VM manager that can run VMs remotely.")
+taskRecipes+=("installVirtMan")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installVirtMan()
+{
+  addPackage "gnome-boxes"
+}
+ #------------------------------------------------------------------------------
+
  taskNames+=("Install Docker")
  taskMessages+=("Processing Docker")
  taskDescriptions+=("Container technology made by idiots")
@@ -921,6 +945,18 @@ installMicroPad()
  snap install micropad
  }
 #------------------------------------------------------------------------------
+taskNames+=("Install GigaNotes")
+ taskMessages+=("Processing GigaNotes")
+ taskDescriptions+=("Online-capable note taker tha works across platforms and on the web")
+ taskRecipes+=("installGigaNotes")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installGigaNotes()
+{
+ snap install giganotes
+ }
+#------------------------------------------------------------------------------
+
  taskNames+=("Install Outwiker")
  taskMessages+=("Processing Outwiker")
  taskDescriptions+=("Wiki Maker")
@@ -1035,12 +1071,23 @@ installCacher()
  snap install cacher
 }
 #------------------------------------------------------------------------------
+ taskNames+=("Install Leafpad")
+ taskMessages+=("Lightweight text editor based on GTK+")
+ taskDescriptions+=("installLeafpad")
+ taskRecipes+=("installLeafpad")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installLeafpad()
+{
+  snap install leafpad
+}
+#------------------------------------------------------------------------------
  taskNames+=("Install Sublime Text")
  taskMessages+=("Basic Code Writing Program")
  taskDescriptions+=("installSublime")
  taskRecipes+=("installSublime")
  taskPostInstallations+=("")
- taskSelectedList+=("Task boolean value")
+ taskSelectedList+=("false")
 installSublime()
 {
   snap install --classic sublime-text
@@ -1235,7 +1282,7 @@ addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octa
  taskSelectedList+=("false")
 installVirtualization()
 {
-addPackage "vde2 libvirt-bin tk8.6 tk tcl8.6 tcl libtk8.6 qemu-kvm aqemu overlayroot open-vm-tools virt-viewer libvirt0 fonts-ubuntu-console ethtool bridge-utils virtinst virt-manager"
+addPackage "vde2 libvirt-bin tk8.6 tk tcl8.6 tcl libtk8.6 qemu-kvm aqemu overlayroot open-vm-tools virt-viewer libvirt0 fonts-ubuntu-console ethtool bridge-utils virtinst"
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install X11 Utilities")
