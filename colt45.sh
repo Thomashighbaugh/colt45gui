@@ -978,7 +978,17 @@ installGigaNotes()
  snap install giganotes
  }
 #------------------------------------------------------------------------------
-
+taskNames+=("Install P3X OneNote")
+ taskMessages+=("Processing P3X OneNote")
+ taskDescriptions+=("Online-capable note taker tha works across platforms and on the web")
+ taskRecipes+=("installOneNote")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installOneNote()
+{
+ snap install p3x-onenote
+ }
+#------------------------------------------------------------------------------
  taskNames+=("Install Outwiker")
  taskMessages+=("Processing Outwiker")
  taskDescriptions+=("Wiki Maker")
@@ -1284,6 +1294,17 @@ installGeary()
 installElectronMail()
 {
   snap install electron-mail
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install Prospect Mail")
+ taskMessages+=("Processing Prospect Mail")
+ taskDescriptions+=("Access Microsoft Mail Account's OutLook Mail")
+ taskRecipes+=("installProspectMail")
+ taskPostInstallations+=("")
+ taskSelectedList+=("False")
+installProspectMail()
+{
+  snap install prospect-mail
 }
 #------------------------------------------------------------------------------
 taskNames+=("Install utilities bundle")
