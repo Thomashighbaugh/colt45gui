@@ -56,6 +56,18 @@ installSnapStore()
 {
  snap install snap-store
  }
+ #------------------------------------------------------------------------------
+taskNames+=("Install AppCenter")
+ taskMessages+=("Processing AppCenter")
+ taskDescriptions+=("Snap Package Manager GUI")
+ taskRecipes+=("installAppCenter")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installAppCenter()
+{
+addRepo "ppa:elementary-os/daily"
+addPackage "appcenter"
+}
 #------------------------------------------------------------------------------
  taskNames+=("Install CoPay")
  taskMessages+=("Processing CoPay")
@@ -193,6 +205,17 @@ taskSelectedList+=("FALSE")
 installGnomeBox()
 {
   addPackage "gnome-boxes"
+}
+#------------------------------------------------------------------------------
+ taskNames+=("Install TeamViewer")
+ taskMessages+=("Processing TeamViewer")
+ taskDescriptions+=("A Remote Viewer Client")
+ taskRecipes+=("installTV")
+ taskPostInstallations+=("")
+ taskSelectedList+=("False")
+installTV()
+{
+installPackage "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 }
  #------------------------------------------------------------------------------
 
@@ -934,6 +957,17 @@ installSimpleNote()
  snap install simplenote
  }
  #------------------------------------------------------------------------------
+ taskNames+=("Install BoostNote")
+ taskMessages+=("Processing BoostNote")
+ taskDescriptions+=("A 'simple' note taker, decent replacement for Giganotes or EverNote")
+ taskRecipes+=("installBoostNote")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installBoostNote()
+{
+  installPackage "https://github.com/BoostIO/boost-releases/releases/download/v0.11.17/boostnote_0.11.17_amd64.deb"
+   }
+ #------------------------------------------------------------------------------
  taskNames+=("Install CherryTree")
  taskMessages+=("Processing CherryTree")
  taskDescriptions+=("A heirarchial note taker to arrange notes like Wikis")
@@ -1353,8 +1387,7 @@ addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octa
  taskSelectedList+=("false")
 installVirtualization()
 {
-addPackage "vde2 libvirt-bin tk8.6 tk tcl8.6 tcl libtk8.6 qemu-kvm aqemu overlayroot open-vm-tools virt-viewer libvirt0 fonts-ubuntu-console ethtool bridge-utils virtinst augeas-lenses augeas-tools binfmt-support ca-certificates-mono  camlp4 cli-common gir1.2-libvirt-sandbox-1.0 ledit libaugeas0 libcamlp4-ocaml-dev libfindlib-ocaml libfindlib-ocaml-dev libgdiplus libgfapi0 libgfrpc0 libgfxdr0 libglusterfs0 libmono-btls-interface4.0-cil libmono-corlib4.5-cil libmono-i18n-west4.0-cil libmono-i18n4.0-cil libmono-security4.0-cil libmono-system-configuration4.0-cil libmono-system-core4.0-cil libmono-system-data4.0-cil libmono-system-drawing4.0-cil libmono-system-enterpriseservices4.0-cil libmono-system-numerics4.0-cil libmono-system-security4.0-cil libmono-system-transactions4.0-cil libmono-system-xml4.0-cil libmono-system4.0-cil libpq-dev libpq5 libsanlock-client1 libsqlite3-dev libtirpc-common libtirpc3 libvirt-daemon-driver-storage-gluster libvirt-daemon-driver-storage-zfs libvirt-dev libvirt-doc libvirt-glib-1.0-dev libvirt-ocaml libvirt-ocaml-dev libvirt-sandbox-1.0-5 libvirt-sandbox-1.0-dev libvirt-sanlock libvirt-wireshark libvirtodbc0 libvirtualpg-dev libvirtualpg0 libvirtuoso5.5-cil libxen-dev mono-4.0-gac mono-gac mono-runtime mono-runtime-common mono-runtime-sgen ocaml-base-nox ocaml-compiler-libs ocaml-findlib ocaml-interp ocaml-nox odbcinst odbcinst1debian2 virtuoso-opensource-6.1-common
-"
+addPackage "vde2 tk8.6 tk tcl8.6 tcl libtk8.6 qemu-kvm aqemu overlayroot open-vm-tools virt-viewer libvirt0 fonts-ubuntu-console ethtool bridge-utils virtinst augeas-lenses augeas-tools binfmt-support ca-certificates-mono  camlp4 cli-common gir1.2-libvirt-sandbox-1.0 ledit libaugeas0 libcamlp4-ocaml-dev libfindlib-ocaml libfindlib-ocaml-dev libgdiplus libgfapi0 libgfrpc0 libgfxdr0 libglusterfs0 libmono-btls-interface4.0-cil libmono-corlib4.5-cil libmono-i18n-west4.0-cil libmono-i18n4.0-cil libmono-security4.0-cil libmono-system-configuration4.0-cil libmono-system-core4.0-cil libmono-system-data4.0-cil libmono-system-drawing4.0-cil libmono-system-enterpriseservices4.0-cil libmono-system-numerics4.0-cil libmono-system-security4.0-cil libmono-system-transactions4.0-cil libmono-system-xml4.0-cil libmono-system4.0-cil libpq-dev libpq5 libsanlock-client1 libsqlite3-dev libtirpc-common libtirpc3 libvirt-daemon-driver-storage-gluster libvirt-daemon-driver-storage-zfs libvirt-dev libvirt-doc libvirt-glib-1.0-dev libvirt-ocaml libvirt-ocaml-dev libvirt-sandbox-1.0-5 libvirt-sandbox-1.0-dev libvirt-sanlock libvirt-wireshark libvirtodbc0 libvirtualpg-dev libvirtualpg0 libvirtuoso5.5-cil libxen-dev mono-4.0-gac mono-gac mono-runtime mono-runtime-common mono-runtime-sgen ocaml-base-nox ocaml-compiler-libs ocaml-findlib ocaml-interp ocaml-nox odbcinst odbcinst1debian2 virtuoso-opensource-6.1-common postgresql-doc-11 devhelp ocaml-doc tuareg-mode tcl-tclreadline vde2-cryptcab "
  }
  #------------------------------------------------------------------------------
  taskNames+=("Install X11 Utilities")
