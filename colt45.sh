@@ -959,7 +959,7 @@ installSimpleNote()
  #------------------------------------------------------------------------------
  taskNames+=("Install BoostNote")
  taskMessages+=("Processing BoostNote")
- taskDescriptions+=("A 'simple' note taker, decent replacement for Giganotes or EverNote")
+ taskDescriptions+=("The only decent programming note taker app!")
  taskRecipes+=("installBoostNote")
  taskPostInstallations+=("")
  taskSelectedList+=("false")
