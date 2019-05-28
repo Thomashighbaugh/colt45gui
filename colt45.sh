@@ -1376,6 +1376,7 @@ taskPostInstallations+=("")
 taskSelectedList+=("FALSE")
 installDevBundle()
 {
+addRepo "ppa:linuxuprising/shutter"
 addPackage "build-essential cmake cmake-gui cmake-curses-gui python python3 octave gfortran git git-svn subversion kdiff3 colordiff openjdk-8-jdk autoconf autotools-dev cppcheckpastebinit autogen shutter cmake git curl gtk2-engines-pixbuf gtk2-engines-murrine gzip unace unrar-free ntfs-3g ntfs-config libfsntfs1 ssh python-pip python3-pip gpaste svn2git subversion-tools  ssvnc backupninja"
 }
 #------------------------------------------------------------------------------
