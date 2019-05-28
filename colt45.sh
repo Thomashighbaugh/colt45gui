@@ -34,6 +34,19 @@ updateSystem()
   updateSystem=true
 }
 #------------------------------------------------------------------------------
+taskNames+=("Install Mint Repos")
+taskMessages+=("Installing Mint Repos")
+taskDescriptions+=("Makes Mint Programs Available on Ubuntu")
+taskRecipes+=("installMintRepos")
+taskPostInstallations+=("")
+taskSelectedList+=("FALSE")
+
+installRestrictedExtras()
+{
+  sh -c 'echo "deb http://packages.linuxmint.com/ tara main" >> /etc/apt/sources.list.d/mint.list'
+  installPackage "http://packages.linuxmint.com/pool/main/l/linuxmint-keyring/linuxmint-keyring_2016.05.26_all.deb"
+}
+#------------------------------------------------------------------------------
 taskNames+=("Install Java, Flash and codecs")
 taskMessages+=("Processing Java, Flash and codecs")
 taskDescriptions+=("Install non-open-source packages like Java, Flash plugin, Unrar, and some audio and video codecs like MP3/AVI/MPEG")
@@ -67,6 +80,17 @@ installAppCenter()
 {
 addRepo "ppa:elementary-os/daily"
 addPackage "appcenter"
+}
+ #------------------------------------------------------------------------------
+taskNames+=("Install SoftwareManager")
+ taskMessages+=("Processing SoftwareManager")
+ taskDescriptions+=("MUST INSTALL MINT REPOS! The Linux Mint Software Manager GUI")
+ taskRecipes+=("installSoftwareManager")
+ taskPostInstallations+=("")
+ taskSelectedList+=("false")
+installSoftwareManager()
+{
+addPackage "mintinstall"
 }
 #------------------------------------------------------------------------------
  taskNames+=("Install CoPay")
