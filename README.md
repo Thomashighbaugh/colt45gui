@@ -9,9 +9,9 @@ Replacing Previous Incarnations of the colt45 Provisioning System is this single
 ## REQUIREMENTS
 
 - Ubuntu Based Distro Installed on Your System 
-  - I use Ubuntu Budgie exclusively now, so the script is designed with it in mind
+  - I use Ubuntu Budgie exclusively now, so the script is designed with it in mind, but will work with other Ubuntu flavors and derivatives. 
 - Some Idea of What You Want to Use Your System For
-- Snap capabilities (deprecated) - **PROVIDED WITH THE APP!!! NEVERMIND**
+-x86_64 architecture (no idea if this will work with other architectures but good luck if you try it with them)
 
 ## USE 
 
